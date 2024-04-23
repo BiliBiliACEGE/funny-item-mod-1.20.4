@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "minecraft:emerald"
+    },
+    "X": {
+      "item": "funny-item-mod:time_freezer"
+    }
+  },
+  "pattern": [
+    "   ",
+    " X#",
+    "   "
+  ],
+  "result": {
+    "item": "funny-item-mod:difficulty_switch"
+  },
+  "show_notification": true
+}

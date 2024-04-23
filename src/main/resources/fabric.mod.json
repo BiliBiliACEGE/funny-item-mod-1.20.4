@@ -1,0 +1,40 @@
+{
+	"schemaVersion": 1,
+	"id": "funny-item-mod",
+	"version": "${version}",
+	"name": "Ace's Funny item Mod",
+	"description": "这是Ace哥闲来无事制作的模组，添加了一些有趣的物品",
+	"authors": [
+		"ACEGE_"
+	],
+	"contact": {
+		"homepage": "",
+		"sources": ""
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/funny-item-mod/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+          "net.ace.funnyitemMod"
+		],
+		"client": [
+			"net.ace.FunnyitemModClient"
+		],
+		"fabric-datagen": [
+			"net.ace.FunnyitemModDataGenerator"
+		]
+	},
+	"mixins": [
+		"funny-item-mod.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.15.7",
+		"minecraft": "~1.20.4",
+		"java": ">=17",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}

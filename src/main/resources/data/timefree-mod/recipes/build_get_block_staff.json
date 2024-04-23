@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "funny-item-mod:get_block_staff_head"
+    },
+    "X": {
+      "item": "funny-item-mod:get_block_staff_handle"
+    },
+    "T": {
+      "item":"minecraft:iron_ingot"
+    }
+  },
+  "pattern": [
+    "  #",
+    " T ",
+    "X  "
+  ],
+  "result": {
+    "item": "funny-item-mod:get_block_staff"
+  },
+  "show_notification": true
+}
