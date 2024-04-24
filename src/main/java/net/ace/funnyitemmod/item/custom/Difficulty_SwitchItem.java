@@ -34,13 +34,17 @@ public class Difficulty_SwitchItem extends Item {
             if (!isDifficultySwitching) {
                 // 开始循环以切换难度
                 isDifficultySwitching = true;
+                String locale = user.getGameProfile().getProperties().get("locale").toString();
                 // 在聊天栏中显示当前难度
                 Random random = new Random();
                 currentDifficultyIndex = random.nextInt(DIFFICULTIES.length);
                 String command = String.format("difficulty %s", DIFFICULTIES[currentDifficultyIndex]);
                 try {
                     dispatcher.execute(command, source);
-                    user.sendMessage(Text.of("当前难度: " + DIFFICULTIES[currentDifficultyIndex]), true);
+                    if (locale.equals("zh_cn")) {
+                        user.sendMessage(Text.of("当前难度: " + DIFFICULTIES[currentDifficultyIndex]), true);
+                    }else
+                        user.sendMessage(Text.of("Current difficulty: " + DIFFICULTIES[currentDifficultyIndex]), true);
                 } catch (CommandSyntaxException e) {
                     e.printStackTrace();
                 }

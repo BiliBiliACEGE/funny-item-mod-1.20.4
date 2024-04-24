@@ -25,11 +25,11 @@ public class Time_FreezerItem extends Item {
         if(!world.isClient){
             startStop=!startStop;
 
-
-            System.out.println("切换");
+            // 执行指令
             if (startStop) {
                 if (user instanceof ServerPlayerEntity) {
                     MinecraftServer server = user.getServer();
+                    String locale = user.getGameProfile().getProperties().get("locale").toString();
                     // 获取服务器命令调度程序
                     CommandDispatcher<ServerCommandSource> dispatcher = server.getCommandManager().getDispatcher();
                     try {
@@ -46,7 +46,11 @@ public class Time_FreezerItem extends Item {
                     }
                     try {
                         // 解析指令并获取命令源
-                        user.sendMessage(Text.literal(("时间已冻结")),true);
+                        if (locale.equals("zh_cn")) {
+                            user.sendMessage(Text.literal(("时间已冻结")), true);
+                        }else {
+                            user.sendMessage(Text.literal(("Time has been frozen")), true);
+                        }
                         ParseResults<ServerCommandSource> parseResults
                                 = dispatcher.parse("tick freeze", server.getCommandSource());
                         // 执行指令
@@ -60,11 +64,16 @@ public class Time_FreezerItem extends Item {
                 }
             }else {
                 MinecraftServer server = user.getServer();
+                String locale = user.getGameProfile().getProperties().get("locale").toString();
                 // 获取服务器命令调度程序
                 CommandDispatcher<ServerCommandSource> dispatcher = server.getCommandManager().getDispatcher();
                 try {
                     // 解析指令并获取命令源
-                    user.sendMessage(Text.literal(("冻结已取消")),true);
+                    if (locale.equals("zh_cn")) {
+                        user.sendMessage(Text.literal(("冻结已取消")), true);
+                    }else {
+                        user.sendMessage(Text.literal(("Freeze has been canceled")), true);
+                    }
                     ParseResults<ServerCommandSource> parseResults
                             = dispatcher.parse("tick unfreeze", server.getCommandSource());
                     // 执行指令

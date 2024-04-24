@@ -25,11 +25,11 @@ public class Time_ControlItem extends Item {
         if(!world.isClient){
             startSwitch=!startSwitch;
 
-
-            System.out.println("切换");
+            // 执行指令
             if (startSwitch) {
                 if (user instanceof ServerPlayerEntity) {
                     MinecraftServer server = user.getServer();
+                    String locale = user.getGameProfile().getProperties().get("locale").toString();
                     // 获取服务器命令调度程序
                     CommandDispatcher<ServerCommandSource> dispatcher = server.getCommandManager().getDispatcher();
                     try {
@@ -46,7 +46,11 @@ public class Time_ControlItem extends Item {
                     }
                     try {
                         // 解析指令并获取命令源
-                        user.sendMessage(Text.literal(("时间已切换到白天")),true);
+                        if (locale.equals("zh_cn")) {
+                            user.sendMessage(Text.literal(("时间已切换到白天")), true);
+                        }else {
+                            user.sendMessage(Text.literal(("Time has switched to day")), true);
+                        }
                         ParseResults<ServerCommandSource> parseResults
                                 = dispatcher.parse("time set day", server.getCommandSource());
                         // 执行指令
@@ -60,11 +64,16 @@ public class Time_ControlItem extends Item {
                 }
             }else {
                 MinecraftServer server = user.getServer();
+                String locale = user.getGameProfile().getProperties().get("locale").toString();
                 // 获取服务器命令调度程序
                 CommandDispatcher<ServerCommandSource> dispatcher = server.getCommandManager().getDispatcher();
                 try {
                     // 解析指令并获取命令源
-                    user.sendMessage(Text.literal(("时间已切换到黑夜")),true);
+                    if (locale.equals("zh_cn")) {
+                        user.sendMessage(Text.literal(("时间已切换到黑夜")), true);
+                    }else {
+                        user.sendMessage(Text.literal(("Time has switched to night")), true);
+                    }
                     ParseResults<ServerCommandSource> parseResults
                             = dispatcher.parse("time set night", server.getCommandSource());
                     // 执行指令

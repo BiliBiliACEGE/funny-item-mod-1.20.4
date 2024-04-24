@@ -34,12 +34,17 @@ public class Fill_BlockItem extends Item {
         BlockHitResult hitResult = raycast(world, user, RaycastContext.FluidHandling.NONE);
         if (hitResult.getType() == HitResult.Type.BLOCK) {
             BlockPos blockPos = hitResult.getBlockPos();
+            String locale = user.getGameProfile().getProperties().get("locale").toString();
             if (user.isSneaking()) {
                 selectedBlockPos = blockPos;
                 BlockState blockState = world.getBlockState(blockPos);
                 selectedBlockName = blockState.getBlock().getName().getString();
                 selectedBlockId = blockState.getBlock().getTranslationKey().substring(6).replace(".", ":");
-                user.sendMessage(Text.literal("已标记方块: " + selectedBlockName), true);
+                if (locale.equals("zh_cn")) {
+                    user.sendMessage(Text.literal("已标记方块: " + selectedBlockName), true);
+                }else {
+                    user.sendMessage(Text.literal("Selected block: " + selectedBlockName), true);
+                }
                 user.sendMessage((Text.literal("X: " + blockPos.getX() + " " + "Y: " + blockPos.getY() + " " + "Z: " + blockPos.getZ())));
             } else if (selectedBlockPos != null && selectedBlockId != null && selectedBlockName != null) {
                 MinecraftServer server = world.getServer();
@@ -76,8 +81,13 @@ public class Fill_BlockItem extends Item {
                     if (dispatcher != null) {
                         dispatcher.execute(parseResults);
                     }
-                    user.sendMessage(Text.literal("已成功将: " + selectedBlockName + "填充到: " + blockPos.getX() + " " + blockPos.getY() + " " + blockPos.getZ()), true);
-                    user.sendMessage((Text.literal("目标方块ID: " + selectedBlockId + " " + "目标方块名称: " + selectedBlockName)));
+                    if (locale.equals("zh_cn")) {
+                        user.sendMessage(Text.literal("已成功将: " + selectedBlockName + "填充到: " + blockPos.getX() + " " + blockPos.getY() + " " + blockPos.getZ()), true);
+                        user.sendMessage((Text.literal("目标方块ID: " + selectedBlockId + " " + "目标方块名称: " + selectedBlockName)));
+                    }else {
+                        user.sendMessage(Text.literal("Successfully filled: " + selectedBlockName + " to: " + blockPos.getX() + " " + blockPos.getY() + " " + blockPos.getZ()), true);
+                        user.sendMessage((Text.literal("Target block ID: " + selectedBlockId + " " + "Target block name: " + selectedBlockName)));
+                    }
                     //重置选择
                     selectedBlockPos = null;
                     selectedBlockId  = null;
@@ -87,7 +97,11 @@ public class Fill_BlockItem extends Item {
                     e.printStackTrace();
                 }
             } else {
-                user.sendMessage(Text.literal("请先潜行加右键选择方块！"), true);
+                if (locale.equals("zh_cn")) {
+                    user.sendMessage(Text.literal("请先潜行加右键选择方块！"), true);
+                }else {
+                    user.sendMessage(Text.literal("Please sneak and right-click to select a block!"), true);
+                }
             }
         }
         return TypedActionResult.success(user.getStackInHand(hand));
