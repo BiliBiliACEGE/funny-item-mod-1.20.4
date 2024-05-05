@@ -24,7 +24,7 @@ public class ModItems {
     public static final  Item Simple_Wooden_Axe = registerItem("simple_wooden_axe",
             new Simple_wooden_axeItem(new FabricItemSettings().maxCount(1)));
     public static final  Item Axe = registerItem("axe",
-            new AxeItem(new FabricItemSettings().maxCount(1).maxDamage(100)));
+            new AxeItem(new FabricItemSettings().maxCount(1)));
     public static final Item Clone = registerItem("clone",
             new CloneItem(new FabricItemSettings().maxCount(1)));
     public static final  Item Hammer = registerItem("hammer",
