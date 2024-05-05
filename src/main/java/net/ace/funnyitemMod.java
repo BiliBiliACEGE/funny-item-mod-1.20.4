@@ -1,7 +1,9 @@
 package net.ace;
 
+import net.ace.funnyitemmod.block.ModBlocks;
 import net.ace.funnyitemmod.item.ModItemGroups;
 import net.ace.funnyitemmod.item.ModItems;
+import net.ace.funnyitemmod.item.custom.AxeItem;
 import net.fabricmc.api.ModInitializer;
 
 import org.slf4j.Logger;
@@ -15,5 +17,6 @@ public class funnyitemMod implements ModInitializer {
 	public void onInitialize() {
 		ModItems.registerModItems();
 		ModItemGroups.registerItemGroups();
+		ModBlocks.registerModBlocks();
 	}
 }

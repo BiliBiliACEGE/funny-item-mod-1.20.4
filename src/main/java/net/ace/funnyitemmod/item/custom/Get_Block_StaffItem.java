@@ -39,12 +39,7 @@ public class Get_Block_StaffItem extends Item {
                 selectedBlockPos = blockPos;
                 BlockState blockState = world.getBlockState(blockPos);
                 String blockName = blockState.getBlock().getName().getString();
-                String locale = user.getGameProfile().getProperties().get("locale").toString();
-                if (locale.equals("zh_cn")) {
                     user.sendMessage(Text.literal("已标记方块: " + blockName), true);
-                }else {
-                    user.sendMessage(Text.literal("Marked block: " + blockName), true);
-                }
                 user.sendMessage((Text.literal("X: " + blockPos.getX() + " " + "Y: " + blockPos.getY() + " " + "Z: " + blockPos.getZ())));
             } else if (selectedBlockPos != null) {
                 MinecraftServer server = world.getServer();
@@ -72,7 +67,6 @@ public class Get_Block_StaffItem extends Item {
                     // 解析指令并获取命令源
                     BlockState blockState = world.getBlockState(blockPos);
                     String blockName = blockState.getBlock().getName().getString();
-                    String locale = user.getGameProfile().getProperties().get("locale").toString();
                     ParseResults<ServerCommandSource> parseResults = null;
                     if (dispatcher != null) {
                         parseResults = dispatcher.parse("setblock " + selectedBlockPos.getX() + " " + selectedBlockPos.getY() + " " + selectedBlockPos.getZ() + " minecraft:air destroy", server.getCommandSource().withWorld((ServerWorld) world));
@@ -81,23 +75,14 @@ public class Get_Block_StaffItem extends Item {
                     if (dispatcher != null) {
                         dispatcher.execute(parseResults);
                     }
-                    if (locale.equals("zh_cn")) {
                         user.sendMessage(Text.literal("已成功获取位于: " + "X: " + selectedBlockPos.getX() + " " + "Y: " + selectedBlockPos.getY() + " " + "Z: " + selectedBlockPos.getZ() + " 的" + blockName), true);
-                    }else {
-                        user.sendMessage(Text.literal("Successfully obtained the block at: " + "X: " + selectedBlockPos.getX() + " " + "Y: " + selectedBlockPos.getY() + " " + "Z: " + selectedBlockPos.getZ() + " " + blockName), true);
-                    }
                     selectedBlockPos = null;
                 } catch (CommandSyntaxException e) {
                     // 指令语法异常处理
                     e.printStackTrace();
                 }
             } else {
-                String locale = user.getGameProfile().getProperties().get("locale").toString();
-                if (locale.equals("zh_cn")) {
                     user.sendMessage(Text.literal("请先潜行加右键选择方块！"), true);
-                }else {
-                    user.sendMessage(Text.literal("Please press sneak and right click to select the block!"), true);
-                }
             }
         }
         return TypedActionResult.success(user.getStackInHand(hand));

@@ -1,11 +1,12 @@
 {
   "item.funny-item-mod.time_freezer": "时间冻结器",
-  "item.funny-item-mod.time_control": "时间切换器",
-  "item.funny-item-mod.difficulty_switch": "难度切换器",
   "item.funny-item-mod.get_block_staff": "方块获取法杖",
   "item.funny-item-mod.get_block_staff_head": "方块获取法杖头",
   "item.funny-item-mod.get_block_staff_handle": "方块获取法杖柄",
-  "item.funny-item-mod.fill_block": "方块填充器",
   "item.funny-item-mod.simple_wooden_axe": "简易小木斧",
+  "item.funny-item-mod.axe": "符文战斧",
+  "item.funny-item-mod.hammer": "符文战锤",
+  "item.funny-item-mod.clone": "建筑克隆枪",
+  "block.funny-item-mod.rune_anvil": "符文铁砧",
   "itemgroup.time": "Ace的有趣物品"
 }

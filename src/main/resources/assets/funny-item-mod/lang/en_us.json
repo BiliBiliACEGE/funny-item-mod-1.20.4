@@ -1,11 +1,12 @@
 {
   "item.funny-item-mod.time_freezer": "Time freezer",
-  "item.funny-item-mod.time_control": "Time control",
-  "item.funny-item-mod.difficulty_switch": "Difficulty Switch",
   "item.funny-item-mod.get_block_staff": "Get Block Staff",
   "item.funny-item-mod.get_block_staff_head": "Get Block Staff head",
   "item.funny-item-mod.get_block_staff_handle": "Get Block Staff Handle",
-  "item.funny-item-mod.fill_block": "Fill Blocker",
   "item.funny-item-mod.simple_wooden_axe": "Simple Wooden Axe",
+  "item.funny-item-mod.axe": "Rune battle axe",
+  "item.funny-item-mod.hammer": "Runic Warhammer",
+  "item.funny-item-mod.clone": "clone",
+  "block.funny-item-mod.rune_anvil": "Rune anvil",
   "itemgroup.time": "Ace's Funny Item"
 }
