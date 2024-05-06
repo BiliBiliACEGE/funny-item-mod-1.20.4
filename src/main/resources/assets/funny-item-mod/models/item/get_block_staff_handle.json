@@ -1,6 +1,0 @@
-{
-  "parent": "item/generated",
-  "textures": {
-    "layer0": "funny-item-mod:item/get_block_staff_handle"
-  }
-}

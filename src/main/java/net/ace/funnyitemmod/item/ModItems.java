@@ -17,10 +17,6 @@ public class ModItems {
             new Time_FreezerItem(new FabricItemSettings().maxCount(1)));
     public static final Item Get_Block_Staff = registerItem("get_block_staff",
             new Get_Block_StaffItem(new FabricItemSettings().maxCount(1)));
-    public static final Item Get_Block_Staff_Handle = registerItem("get_block_staff_handle",
-            new Item(new FabricItemSettings().maxCount(64)));
-    public static final Item Get_Block_Staff_Head = registerItem("get_block_staff_head",
-            new Item(new FabricItemSettings().maxCount(64)));
     public static final  Item Simple_Wooden_Axe = registerItem("simple_wooden_axe",
             new Simple_wooden_axeItem(new FabricItemSettings().maxCount(1)));
     public static final  Item Axe = registerItem("axe",

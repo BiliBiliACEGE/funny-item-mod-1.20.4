@@ -17,8 +17,6 @@ public class ModItemGroups {
                     .icon(() -> new ItemStack(ModItems.Time_freezer)).entries((displayContext, entries) -> {
                         entries.add(ModItems.Time_freezer);
                         entries.add(ModItems.Get_Block_Staff);
-                        entries.add(ModItems.Get_Block_Staff_Handle);
-                        entries.add(ModItems.Get_Block_Staff_Head);
                         entries.add(ModItems.Simple_Wooden_Axe);
                         entries.add(ModItems.Clone);
                         entries.add(ModItems.Axe);
