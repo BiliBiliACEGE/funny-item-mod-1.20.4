@@ -50,9 +50,9 @@ public class RuneAnvilBlock extends Block implements Inventory {
                     ItemStack book = inventory.removeStack(0);
                     // 升级附魔书等级
                     book = upgradeEnchantmentLevel(book);
+                    world.playSound(player, pos, SoundEvents.BLOCK_ANVIL_USE, SoundCategory.BLOCKS, 1.0f, 1.0f);
                     // 将取出的附魔书作为掉落物掉落到地面上
                     world.spawnEntity(new ItemEntity(world, pos.getX(), pos.getY(), pos.getZ(), book));
-                    world.playSound(player, pos, SoundEvents.BLOCK_ANVIL_USE, SoundCategory.BLOCKS, 1.0f, 1.0f);
                 }
             } else if (heldItem.isEmpty()) { // 玩家手持空手
                 // 尝试从方块中取出书
@@ -65,7 +65,7 @@ public class RuneAnvilBlock extends Block implements Inventory {
                 // 玩家手中是附魔书，尝试放入方块
                 if (inventory.isEmpty()) {
                     inventory.setStack(0, heldItem.split(1)); // 不再备份附魔书，而是直接放入方块
-                    world.playSound(player, pos, SoundEvents.ITEM_BOOK_PUT, SoundCategory.BLOCKS, 1.0f, 1.0f);
+                    world.playSound(player, pos, SoundEvents.BLOCK_ANVIL_USE, SoundCategory.BLOCKS, 1.0f, 1.0f);
                 }
             }
         }
