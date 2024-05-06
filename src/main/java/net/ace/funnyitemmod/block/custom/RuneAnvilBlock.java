@@ -1,7 +1,6 @@
 package net.ace.funnyitemmod.block.custom;
 
 import net.ace.funnyitemmod.item.ModItems;
-import net.ace.funnyitemmod.item.custom.HammerItem;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.ShapeContext;
@@ -9,28 +8,21 @@ import net.minecraft.entity.ItemEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.Inventory;
 import net.minecraft.inventory.SimpleInventory;
-import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemUsageContext;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.nbt.NbtElement;
 import net.minecraft.nbt.NbtList;
 import net.minecraft.sound.SoundCategory;
-import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
-import net.minecraft.state.StateManager;
-import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.Direction;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
-import net.minecraft.world.WorldAccess;
 
 
 public class RuneAnvilBlock extends Block implements Inventory {
@@ -50,22 +42,22 @@ public class RuneAnvilBlock extends Block implements Inventory {
                     ItemStack book = inventory.removeStack(0);
                     // 升级附魔书等级
                     book = upgradeEnchantmentLevel(book);
-                    world.playSound(player, pos, SoundEvents.BLOCK_ANVIL_USE, SoundCategory.BLOCKS, 1.0f, 1.0f);
                     // 将取出的附魔书作为掉落物掉落到地面上
                     world.spawnEntity(new ItemEntity(world, pos.getX(), pos.getY(), pos.getZ(), book));
+                    world.playSound(player, pos, SoundEvents.BLOCK_ANVIL_USE, SoundCategory.BLOCKS, 1.0f, 1.0f);
                 }
             } else if (heldItem.isEmpty()) { // 玩家手持空手
                 // 尝试从方块中取出书
                 if (!inventory.isEmpty()) {
                     ItemStack book = inventory.removeStack(0);
                     player.setStackInHand(hand, book);
-                    world.playSound(player, pos, SoundEvents.BLOCK_ANVIL_USE, SoundCategory.BLOCKS, 1.0f, 1.0f);
+                    world.playSound(player, pos, SoundEvents.BLOCK_ANVIL_FALL, SoundCategory.BLOCKS, 1.0f, 1.0f);
                 }
             } else if (heldItem.getItem() == Items.ENCHANTED_BOOK) {
                 // 玩家手中是附魔书，尝试放入方块
                 if (inventory.isEmpty()) {
                     inventory.setStack(0, heldItem.split(1)); // 不再备份附魔书，而是直接放入方块
-                    world.playSound(player, pos, SoundEvents.BLOCK_ANVIL_USE, SoundCategory.BLOCKS, 1.0f, 1.0f);
+                    world.playSound(player, pos, SoundEvents.BLOCK_ANVIL_LAND, SoundCategory.BLOCKS, 1.0f, 1.0f);
                 }
             }
         }
