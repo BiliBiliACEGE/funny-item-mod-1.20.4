@@ -25,7 +25,7 @@ public abstract class ModelLoaderMixin {
     @Inject(method = "<init>", at = @At("RETURN"))
     private void addgetblock(BlockColors blockColors, Profiler profiler, Map<Identifier, JsonUnbakedModel> jsonUnbakedModels, Map<Identifier, List<ModelLoader.SourceTrackedData>> data, CallbackInfo info) {
         this.addModel(new ModelIdentifier(funnyitemMod.MOD_ID, "get_block_staff", "inventory"));
-        this.addModel(new ModelIdentifier(funnyitemMod.MOD_ID, "hammer", "inventory"));
+        this.addModel(new ModelIdentifier(funnyitemMod.MOD_ID, "rune_smith_hammer", "inventory"));
         this.addModel(new ModelIdentifier(funnyitemMod.MOD_ID, "axe", "inventory"));
         this.addModel(new ModelIdentifier(funnyitemMod.MOD_ID, "clone", "inventory"));
     }

@@ -23,7 +23,7 @@ public abstract class ItemRendererMixin {
             return ((ItemRendererAccessor) this).mccoursc$getModels().getModelManager().getModel(new ModelIdentifier(funnyitemMod.MOD_ID, "get_block_staff", "inventory"));
         }
         if (itemStack.isOf(ModItems.Hammer) && renderMode != ModelTransformationMode.GUI) {
-            return ((ItemRendererAccessor) this).mccoursc$getModels().getModelManager().getModel(new ModelIdentifier(funnyitemMod.MOD_ID, "hammer", "inventory"));
+            return ((ItemRendererAccessor) this).mccoursc$getModels().getModelManager().getModel(new ModelIdentifier(funnyitemMod.MOD_ID, "rune_smith_hammer", "inventory"));
         }
         if (itemStack.isOf(ModItems.Axe) && renderMode != ModelTransformationMode.GUI) {
             return ((ItemRendererAccessor) this).mccoursc$getModels().getModelManager().getModel(new ModelIdentifier(funnyitemMod.MOD_ID, "axe", "inventory"));
