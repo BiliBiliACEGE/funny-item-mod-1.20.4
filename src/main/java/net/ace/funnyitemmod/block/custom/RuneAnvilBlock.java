@@ -65,7 +65,7 @@ public class RuneAnvilBlock extends Block implements Inventory {
     }
     @Override
     public VoxelShape getOutlineShape(BlockState state, BlockView view, BlockPos pos, ShapeContext context) {
-        return VoxelShapes.cuboid(0f, 0.3f, 0f, 1.0f, 1f, 1.0f);
+        return VoxelShapes.cuboid(0, 0.01, 0.25, 1, 0.81, 0.75);//0.16   0.64
     }
 
     @Override
