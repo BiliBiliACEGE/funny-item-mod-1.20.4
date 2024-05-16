@@ -6,5 +6,7 @@
   "item.funny-item-mod.rune_smith_hammer": "Rune smith Hammer",
   "item.funny-item-mod.clone": "Construction Cloning Gun",
   "block.funny-item-mod.rune_anvil": "Rune anvil",
+  "item.funny-item-mod.water_block": "Water Block",
+  "item.funny-item-mod.lava_block": "Lava Block",
   "itemgroup.time": "Ace's Funny Item"
 }

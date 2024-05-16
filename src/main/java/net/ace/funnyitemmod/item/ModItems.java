@@ -25,6 +25,7 @@ public class ModItems {
             new CloneItem(new FabricItemSettings().maxCount(1)));
     public static final  Item Hammer = registerItem("rune_smith_hammer",
             new HammerItem(new FabricItemSettings().maxCount(1)));
+
     private static void addItemsItemGroup(FabricItemGroupEntries entries) {
     }
     private static Item registerItem(String name, Item item) {

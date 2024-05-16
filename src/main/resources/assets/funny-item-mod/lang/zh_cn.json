@@ -6,5 +6,7 @@
   "item.funny-item-mod.rune_smith_hammer": "符文锻锤",
   "item.funny-item-mod.clone": "建筑克隆枪",
   "block.funny-item-mod.rune_anvil": "符文铁砧",
+  "item.funny-item-mod.water_block": "水方块",
+  "item.funny-item-mod.lava_block": "熔岩方块",
   "itemgroup.time": "Ace的有趣物品"
 }
