@@ -39,11 +39,11 @@ public class CloneItem extends Item {
 
         if (selectedBlockPos1 == null) {
             selectedBlockPos1 = blockPos;
-            user.sendMessage(Text.literal("已标记点1"), true);
+            user.sendMessage(Text.translatable("item.funny-item-mod.Ce.selected.1"), true);
             user.sendMessage((Text.literal("X: " + blockPos.getX() + " Y: " + blockPos.getY() + " Z: " + blockPos.getZ())));
         } else if (selectedBlockPos2 == null) {
             selectedBlockPos2 = blockPos;
-            user.sendMessage(Text.literal("已标记点2"), true);
+            user.sendMessage(Text.translatable("item.funny-item-mod.Ce.selected.2"), true);
             user.sendMessage((Text.literal("X: " + blockPos.getX() + " Y: " + blockPos.getY() + " Z: " + blockPos.getZ())));
         } else {
             selectedBlockPos3 = blockPos;
@@ -92,10 +92,11 @@ public class CloneItem extends Item {
 
             ParseResults<ServerCommandSource> parseResults = dispatcher.parse(fillCommand, server.getCommandSource().withWorld((ServerWorld) user.getWorld()));
             dispatcher.execute(parseResults);
-            user.sendMessage(Text.literal("已成功克隆方块到区域: " + selectedBlockPos3), true);
+            String message = Text.translatable("item.funny-item-mod.Ce.success").getString() + selectedBlockPos1;
+            user.sendMessage(Text.literal(message), true);
         } catch (CommandSyntaxException e) {
             e.printStackTrace();
-            user.sendMessage(Text.literal("克隆方块时发生错误，请检查选择的区域是否有效"), true);
+            user.sendMessage(Text.translatable("item.funny-item-mod.Ce.error"), true);
         }
 
         // 重置选择方块效果

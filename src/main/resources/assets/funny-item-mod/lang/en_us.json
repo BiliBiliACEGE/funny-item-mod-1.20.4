@@ -6,7 +6,17 @@
   "item.funny-item-mod.rune_smith_hammer": "Rune smith Hammer",
   "item.funny-item-mod.clone": "Construction Cloning Gun",
   "block.funny-item-mod.rune_anvil": "Rune anvil",
-  "item.funny-item-mod.water_block": "Water Block",
-  "item.funny-item-mod.lava_block": "Lava Block",
-  "itemgroup.time": "Ace's Funny Item"
+  "itemgroup.time": "Ace's Funny Item",
+  "item.funny-item-mod.time_freezer.start": "Time has frozen",
+  "item.funny-item-mod.time_freezer.stop":"The freeze has been canceled",
+  "item.funny-item-mod.swa.selected.1": "Point 1 has been selected",
+  "item.funny-item-mod.swa.selected.2": "Point 2 has been selected",
+  "item.funny-item-mod.swa.filld": "The block is filled",
+  "item.funny-item-mod.get_block_staff.use": "Blocks has been selected：",
+  "item.funny-item-mod.get_block_staff.success": "You've successfully acquired it ",
+  "item.funny-item-mod.get_block_staff.pl": "Sneak and right-click to select the block!",
+  "item.funny-item-mod.Ce.selected.1": "Point 1 has been selected",
+  "item.funny-item-mod.Ce.selected.2": "Point 2 has been selected",
+  "item.funny-item-mod.Ce.success": "Clone has been successfully to:",
+  "item.funny-item-mod.Ce.error": "An error occurred while cloning the block, please check if the selected area is valid"
 }

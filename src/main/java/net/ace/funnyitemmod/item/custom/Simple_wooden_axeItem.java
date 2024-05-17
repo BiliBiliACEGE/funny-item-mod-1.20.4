@@ -42,7 +42,7 @@ public class Simple_wooden_axeItem extends Item {
                 BlockState blockState = world.getBlockState(blockPos);
                 selectedBlockName = blockState.getBlock().getName().getString();
                 selectedBlockId = blockState.getBlock().getTranslationKey().substring(6).replace(".", ":");
-                    user.sendMessage(Text.literal("已标记点1"), true);
+                    user.sendMessage(Text.translatable("item.funny-item-mod.swa.selected.1"), true);
                 user.sendMessage((Text.literal("X: " + blockPos.getX() + " " + "Y: " + blockPos.getY() + " " + "Z: " + blockPos.getZ())));
             } else {
                 selectedBlockPos2 = blockPos;
@@ -71,8 +71,7 @@ public class Simple_wooden_axeItem extends Item {
             // 执行
             ParseResults<ServerCommandSource> parseResults = dispatcher.parse(fillCommand, server.getCommandSource().withWorld((ServerWorld) user.getWorld()));
             dispatcher.execute(parseResults);
-                user.sendMessage(Text.literal("已选择点2"), true);
-                user.sendMessage(Text.literal("已成功填充方块: " + selectedBlockName + " 到区域: " + selectedBlockPos + " 到 " + selectedBlockPos2));
+                user.sendMessage(Text.translatable("item.funny-item-mod.swa.filld"), true);
         } catch (CommandSyntaxException e) {
             e.printStackTrace();
         }

@@ -39,7 +39,8 @@ public class Get_Block_StaffItem extends Item {
                 selectedBlockPos = blockPos;
                 BlockState blockState = world.getBlockState(blockPos);
                 String blockName = blockState.getBlock().getName().getString();
-                user.sendMessage(Text.literal("已标记方块: " + blockName), true);
+                String message = Text.translatable("item.funny-item-mod.get_block_staff.use").getString() + " " + blockName;
+                user.sendMessage(Text.literal(message), true);
                 user.sendMessage((Text.literal("X: " + blockPos.getX() + " " + "Y: " + blockPos.getY() + " " + "Z: " + blockPos.getZ())));
             } else if (selectedBlockPos != null) {
                 MinecraftServer server = world.getServer();
@@ -75,14 +76,15 @@ public class Get_Block_StaffItem extends Item {
                     if (dispatcher != null) {
                         dispatcher.execute(parseResults);
                     }
-                    user.sendMessage(Text.literal("已成功获取位于: " + "X: " + selectedBlockPos.getX() + " " + "Y: " + selectedBlockPos.getY() + " " + "Z: " + selectedBlockPos.getZ() + " 的" + blockName), true);
+                    String message = Text.translatable("item.funny-item-mod.get_block_staff.success").getString() + blockName ;
+                    user.sendMessage(Text.literal(message), true);
                     selectedBlockPos = null;
                 } catch (CommandSyntaxException e) {
                     // 指令语法异常处理
                     e.printStackTrace();
                 }
             } else {
-                user.sendMessage(Text.literal("请先潜行加右键选择方块！"), true);
+                user.sendMessage(Text.translatable("item.funny-item-mod.get_block_staff.pl"), true);
             }
         }
         return TypedActionResult.success(user.getStackInHand(hand));

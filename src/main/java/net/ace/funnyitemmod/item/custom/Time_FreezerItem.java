@@ -44,8 +44,8 @@ public class Time_FreezerItem extends Item {
                         e.printStackTrace();
                     }
                     try {
+                        user.sendMessage(Text.translatable("item.funny-item-mod.time_freezer.start"),true);
                         // 解析指令并获取命令源
-                            user.sendMessage(Text.literal(("时间已冻结")), true);
                         ParseResults<ServerCommandSource> parseResults
                                 = dispatcher.parse("tick freeze", server.getCommandSource());
                         // 执行指令
@@ -63,7 +63,7 @@ public class Time_FreezerItem extends Item {
                 CommandDispatcher<ServerCommandSource> dispatcher = server.getCommandManager().getDispatcher();
                 try {
                     // 解析指令并获取命令源
-                        user.sendMessage(Text.literal(("冻结已取消")), true);
+                        user.sendMessage(Text.translatable(("item.funny-item-mod.time_freezer.stop")), true);
                     ParseResults<ServerCommandSource> parseResults
                             = dispatcher.parse("tick unfreeze", server.getCommandSource());
                     // 执行指令

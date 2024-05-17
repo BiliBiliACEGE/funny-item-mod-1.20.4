@@ -6,7 +6,17 @@
   "item.funny-item-mod.rune_smith_hammer": "符文锻锤",
   "item.funny-item-mod.clone": "建筑克隆枪",
   "block.funny-item-mod.rune_anvil": "符文铁砧",
-  "item.funny-item-mod.water_block": "水方块",
-  "item.funny-item-mod.lava_block": "熔岩方块",
-  "itemgroup.time": "Ace的有趣物品"
+  "itemgroup.time": "Ace的有趣物品",
+  "item.funny-item-mod.time_freezer.start": "时间已冻结",
+  "item.funny-item-mod.time_freezer.stop":"冻结已取消",
+  "item.funny-item-mod.swa.selected.1": "已选择点1",
+  "item.funny-item-mod.swa.selected.2": "已选择点2",
+  "item.funny-item-mod.swa.filld": "方块已填充",
+  "item.funny-item-mod.get_block_staff.use": "已选中方块：",
+  "item.funny-item-mod.get_block_staff.success": "你已经成功获取了",
+  "item.funny-item-mod.get_block_staff.pl": "请先潜行加右键选择方块！",
+  "item.funny-item-mod.Ce.selected.1": "已选择点1",
+  "item.funny-item-mod.Ce.selected.2": "已选择点2",
+  "item.funny-item-mod.Ce.success": "已成功克隆至：",
+  "item.funny-item-mod.Ce.error": "克隆方块时发生错误，请检查选择的区域是否有效"
 }
