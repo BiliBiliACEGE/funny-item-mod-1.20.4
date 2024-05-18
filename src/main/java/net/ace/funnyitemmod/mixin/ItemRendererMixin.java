@@ -31,6 +31,12 @@ public abstract class ItemRendererMixin {
         if (itemStack.isOf(ModItems.Clone) && renderMode != ModelTransformationMode.GUI) {
             return ((ItemRendererAccessor) this).mccoursc$getModels().getModelManager().getModel(new ModelIdentifier(funnyitemMod.MOD_ID, "clone", "inventory"));
         }
+        if (itemStack.isOf(ModItems.Hammer_head) && renderMode != ModelTransformationMode.GUI) {
+            return ((ItemRendererAccessor) this).mccoursc$getModels().getModelManager().getModel(new ModelIdentifier(funnyitemMod.MOD_ID, "rune_smith_hammer_head", "inventory"));
+        }
+        if (itemStack.isOf(ModItems.Hammer_handle) && renderMode != ModelTransformationMode.GUI) {
+            return ((ItemRendererAccessor) this).mccoursc$getModels().getModelManager().getModel(new ModelIdentifier(funnyitemMod.MOD_ID, "rune_smith_hammer_handle", "inventory"));
+        }
         return value;
     }
 }

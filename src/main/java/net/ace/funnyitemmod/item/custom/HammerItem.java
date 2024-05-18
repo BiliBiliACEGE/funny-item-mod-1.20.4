@@ -18,6 +18,8 @@ import net.minecraft.util.ActionResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
+import static net.minecraft.block.AnvilBlock.FACING;
+
 public class HammerItem extends Item {
     public HammerItem(Settings settings) {
         super(settings);
@@ -35,7 +37,7 @@ public class HammerItem extends Item {
             world.playSound(player, pos, SoundEvents.BLOCK_ANVIL_USE, SoundCategory.BLOCKS, 1.0f, 1.0f);
 
             // 替换为你自定义的铁砧
-            world.setBlockState(pos, ModBlocks.Rune_anvil.getDefaultState());
+            world.setBlockState(pos, ModBlocks.Rune_anvil.getDefaultState().with(FACING, context.getHorizontalPlayerFacing().getOpposite()));
 
             return ActionResult.SUCCESS;
         }

@@ -60,7 +60,7 @@ public class RuneAnvilBlock extends HorizontalFacingBlock implements Inventory {
 
     @Override
     protected MapCodec<? extends HorizontalFacingBlock> getCodec() {
-        return null; // 如果需要特定的实现，请参考框架文档
+        return null;
     }
 
     @Override

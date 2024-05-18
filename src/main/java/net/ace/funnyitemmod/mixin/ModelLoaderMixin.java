@@ -28,5 +28,7 @@ public abstract class ModelLoaderMixin {
         this.addModel(new ModelIdentifier(funnyitemMod.MOD_ID, "rune_smith_hammer", "inventory"));
         this.addModel(new ModelIdentifier(funnyitemMod.MOD_ID, "axe", "inventory"));
         this.addModel(new ModelIdentifier(funnyitemMod.MOD_ID, "clone", "inventory"));
+        this.addModel(new ModelIdentifier(funnyitemMod.MOD_ID, "rune_smith_hammer_head", "inventory"));
+        this.addModel(new ModelIdentifier(funnyitemMod.MOD_ID, "rune_smith_hammer_handle", "inventory"));
     }
 }

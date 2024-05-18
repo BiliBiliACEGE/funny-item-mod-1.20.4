@@ -21,6 +21,8 @@ public class ModItemGroups {
                         entries.add(ModItems.Clone);
                         entries.add(ModItems.Axe);
                         entries.add(ModItems.Hammer);
+                        entries.add(ModItems.Hammer_head);
+                        entries.add(ModItems.Hammer_handle);
                         entries.add(ModBlocks.Rune_anvil);
 
 
