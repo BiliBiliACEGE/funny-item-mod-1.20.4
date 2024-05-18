@@ -1,7 +1,8 @@
 {
   "variants": {
-    "": {
-      "model": "funny-item-mod:block/rune_anvil"
-    }
+    "facing=north": { "model": "funny-item-mod:block/rune_anvil" },
+    "facing=south": { "model": "funny-item-mod:block/rune_anvil", "y": 180 },
+    "facing=west": { "model": "funny-item-mod:block/rune_anvil", "y": 270 },
+    "facing=east": { "model": "funny-item-mod:block/rune_anvil", "y": 90 }
   }
 }
