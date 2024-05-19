@@ -38,7 +38,7 @@ public class ChunkPickaxeItem extends PickaxeItem {
     }
 
     public ChunkPickaxeItem(FabricItemSettings settings) {
-        super(ToolMaterials.DIAMOND, 1, -2.8F, settings);
+        super(ToolMaterials.NETHERITE, 1, -2.8F, settings);
     }
 
     @Override
