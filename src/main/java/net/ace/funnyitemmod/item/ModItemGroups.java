@@ -14,7 +14,7 @@ public class ModItemGroups {
     public static final ItemGroup Mod_GROUP = Registry.register(Registries.ITEM_GROUP,
             new Identifier(funnyitemMod.MOD_ID, "time"),
             FabricItemGroup.builder().displayName(Text.translatable("itemgroup.time"))
-                    .icon(() -> new ItemStack(ModItems.Time_freezer)).entries((displayContext, entries) -> {
+                    .icon(() -> new ItemStack(ModBlocks.Rune_anvil)).entries((displayContext, entries) -> {
                         entries.add(ModItems.Time_freezer);
                         entries.add(ModItems.Get_Block_Staff);
                         entries.add(ModItems.Simple_Wooden_Axe);

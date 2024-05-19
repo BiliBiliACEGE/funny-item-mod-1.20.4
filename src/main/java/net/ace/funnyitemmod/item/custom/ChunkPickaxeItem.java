@@ -59,6 +59,7 @@ public class ChunkPickaxeItem extends PickaxeItem {
                         BlockPos currentPos = new BlockPos(x, y, z);
                         BlockState currentState = world.getBlockState(currentPos);
                         Block currentBlock = currentState.getBlock();
+                        livingEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOW_FALLING, 20 * 30, 0));
 
                         if (currentBlock != Blocks.BEDROCK && !currentState.isAir()) {
                             world.breakBlock(currentPos, true, miner); // 产生掉落物
@@ -75,13 +76,11 @@ public class ChunkPickaxeItem extends PickaxeItem {
                             diggingUp = !diggingUp;
                             return true;
                         }
+                        if (diggingUp){
+                            livingEntity.removeStatusEffect(StatusEffects.SLOW_FALLING);
+                        }
                     }
                 }
-            }
-
-            // 如果是向下挖掘，给玩家添加缓降效果
-            if (!diggingUp) {
-                livingEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOW_FALLING, 20 * 30, 0));
             }
         }
         return super.postMine(stack, world, state, pos, miner);
