@@ -24,6 +24,7 @@ public class ModItemGroups {
                         entries.add(ModItems.Hammer_head);
                         entries.add(ModItems.Hammer_handle);
                         entries.add(ModBlocks.Rune_anvil);
+                        entries.add(ModItems.Chunk_pickaxe);
 
 
 

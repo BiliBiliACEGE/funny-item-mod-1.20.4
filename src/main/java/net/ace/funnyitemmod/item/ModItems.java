@@ -29,6 +29,8 @@ public class ModItems {
             new Item(new FabricItemSettings().maxCount(1)));
     public static final Item Hammer_handle = registerItem("rune_smith_hammer_handle",
             new Item(new FabricItemSettings().maxCount(1)));
+    public static final Item Chunk_pickaxe = registerItem("chunk_pickaxe",
+            new ChunkPickaxeItem(new FabricItemSettings().maxCount(1)));
 
     private static void addItemsItemGroup(FabricItemGroupEntries entries) {
     }

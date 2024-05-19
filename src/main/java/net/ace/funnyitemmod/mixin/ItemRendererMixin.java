@@ -37,6 +37,9 @@ public abstract class ItemRendererMixin {
         if (itemStack.isOf(ModItems.Hammer_handle) && renderMode != ModelTransformationMode.GUI) {
             return ((ItemRendererAccessor) this).mccoursc$getModels().getModelManager().getModel(new ModelIdentifier(funnyitemMod.MOD_ID, "rune_smith_hammer_handle", "inventory"));
         }
+        if (itemStack.isOf(ModItems.Chunk_pickaxe) && renderMode != ModelTransformationMode.GUI) {
+            return ((ItemRendererAccessor) this).mccoursc$getModels().getModelManager().getModel(new ModelIdentifier(funnyitemMod.MOD_ID, "chunk_pickaxe", "inventory"));
+        }
         return value;
     }
 }
