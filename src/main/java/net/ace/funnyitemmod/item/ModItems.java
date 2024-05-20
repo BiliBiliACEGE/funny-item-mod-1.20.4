@@ -39,7 +39,7 @@ public class ModItems {
     }
 
     public static void registerModItems() {
-        funnyitemMod.LOGGER.info("模组物品注册" + funnyitemMod.MOD_ID);
+        funnyitemMod.LOGGER.info("模组物品注册 " + funnyitemMod.MOD_ID);
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(ModItems::addItemsItemGroup);
     }
