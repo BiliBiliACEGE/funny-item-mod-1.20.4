@@ -21,5 +21,8 @@
   "item.funny-item-mod.Ce.selected.1": "已选择点1",
   "item.funny-item-mod.Ce.selected.2": "已选择点2",
   "item.funny-item-mod.Ce.success": "已成功克隆至：",
-  "item.funny-item-mod.Ce.error": "克隆方块时发生错误，请检查选择的区域是否有效"
+  "item.funny-item-mod.Ce.error": "克隆方块时发生错误，请检查选择的区域是否有效",
+  "command.up": "挖掘方向已设置为向上",
+  "command.down": "挖掘方向已设置为向下",
+  "command.error": "指令错误，请检查输入的参数是否正确"
 }

@@ -21,5 +21,8 @@
   "item.funny-item-mod.Ce.selected.1": "Point 1 has been selected",
   "item.funny-item-mod.Ce.selected.2": "Point 2 has been selected",
   "item.funny-item-mod.Ce.success": "Clone has been successfully to:",
-  "item.funny-item-mod.Ce.error": "An error occurred while cloning the block, please check if the selected area is valid"
+  "item.funny-item-mod.Ce.error": "An error occurred while cloning the block, please check if the selected area is valid",
+  "command.up": "The digging direction has been set to up",
+  "command.down": "The digging direction has been set to down",
+  "command.error": "The command is wrong, please check the command"
 }

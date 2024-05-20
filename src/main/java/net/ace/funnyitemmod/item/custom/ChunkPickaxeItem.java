@@ -23,7 +23,8 @@ import java.util.Set;
 
 public class ChunkPickaxeItem extends PickaxeItem {
     private static final Set<ItemStack> MINERAL_ITEMS = new HashSet<>();
-    private boolean diggingUp = false; // 挖掘方向，默认为向下
+    private static boolean diggingUp = false; // 挖掘方向，默认为向下
+
 
     static {
         MINERAL_ITEMS.add(new ItemStack(Items.DIAMOND));
@@ -39,6 +40,17 @@ public class ChunkPickaxeItem extends PickaxeItem {
 
     public ChunkPickaxeItem(FabricItemSettings settings) {
         super(ToolMaterials.NETHERITE, 1, -2.8F, settings);
+    }
+
+    public static void toggleDirection() {
+        diggingUp = !diggingUp;
+    }
+    public static void setDirection(boolean direction) {
+        diggingUp = direction;
+    }
+
+    public static boolean isDiggingUp() {
+        return diggingUp;
     }
 
     @Override
