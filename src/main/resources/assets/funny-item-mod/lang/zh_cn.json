@@ -1,5 +1,5 @@
 {
-  "item.funny-item-mod.time_freezer": "时间冻结器",
+  "item.funny-item-mod.bullet_time": "子弹时间",
   "item.funny-item-mod.get_block_staff": "方块获取法杖",
   "item.funny-item-mod.simple_wooden_axe": "简易小木斧",
   "item.funny-item-mod.axe": "符文战斧",
@@ -10,8 +10,8 @@
   "item.funny-item-mod.clone": "建筑克隆枪",
   "block.funny-item-mod.rune_anvil": "符文铁砧",
   "itemgroup.time": "Ace的有趣物品",
-  "item.funny-item-mod.time_freezer.start": "时间已冻结",
-  "item.funny-item-mod.time_freezer.stop":"冻结已取消",
+  "item.funny-item-mod.bullet_time.start": "子弹时间！",
+  "item.funny-item-mod.bullet_time.stop":"回到正常时间",
   "item.funny-item-mod.swa.selected.1": "已选择点1",
   "item.funny-item-mod.swa.selected.2": "已选择点2",
   "item.funny-item-mod.swa.filld": "方块已填充",
@@ -24,5 +24,7 @@
   "item.funny-item-mod.Ce.error": "克隆方块时发生错误，请检查选择的区域是否有效",
   "command.up": "挖掘方向已设置为向上",
   "command.down": "挖掘方向已设置为向下",
-  "command.error": "指令错误，请检查输入的参数是否正确"
+  "command.error": "指令错误，请检查输入的参数是否正确",
+  "command.mode.mining": "工具模式已设置为挖掘模式",
+  "command.mode.fill": "工具模式已设置为填充模式"
 }

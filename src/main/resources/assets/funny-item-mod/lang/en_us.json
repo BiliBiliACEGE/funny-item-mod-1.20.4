@@ -1,5 +1,5 @@
 {
-  "item.funny-item-mod.time_freezer": "Time freezer",
+  "item.funny-item-mod.bullet_time": "Bullet Time",
   "item.funny-item-mod.get_block_staff": "Get Block Staff",
   "item.funny-item-mod.simple_wooden_axe": "Simple Wooden Axe",
   "item.funny-item-mod.axe": "Rune battle axe",
@@ -10,8 +10,8 @@
   "item.funny-item-mod.clone": "Construction Cloning Gun",
   "block.funny-item-mod.rune_anvil": "Rune anvil",
   "itemgroup.time": "Ace's Funny Item",
-  "item.funny-item-mod.time_freezer.start": "Time has frozen",
-  "item.funny-item-mod.time_freezer.stop":"The freeze has been canceled",
+  "item.funny-item-mod.bullet_time.start": "Bullet time!",
+  "item.funny-item-mod.bullet_time.stop":"The time has been normal",
   "item.funny-item-mod.swa.selected.1": "Point 1 has been selected",
   "item.funny-item-mod.swa.selected.2": "Point 2 has been selected",
   "item.funny-item-mod.swa.filld": "The block is filled",
@@ -24,5 +24,7 @@
   "item.funny-item-mod.Ce.error": "An error occurred while cloning the block, please check if the selected area is valid",
   "command.up": "The digging direction has been set to up",
   "command.down": "The digging direction has been set to down",
-  "command.error": "The command is wrong, please check the command"
+  "command.error": "The command is wrong, please check the command",
+  "command.mode.mining": "The tool mode is set to mining mode",
+  "command.mode.fill": "The tool mode is set to fill mode"
 }

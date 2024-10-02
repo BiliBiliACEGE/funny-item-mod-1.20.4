@@ -6,15 +6,14 @@ import net.ace.funnyitemmod.item.custom.AxeItem;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
-import net.minecraft.block.Block;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 
 public class ModItems {
-    public static final Item Time_freezer = registerItem("time_freezer",
-            new Time_FreezerItem(new FabricItemSettings().maxCount(1)));
+    public static final Item Bullet_time = registerItem("bullet_time",
+            new Bullet_timeItem(new FabricItemSettings().maxCount(1)));
     public static final Item Get_Block_Staff = registerItem("get_block_staff",
             new Get_Block_StaffItem(new FabricItemSettings().maxCount(1)));
     public static final  Item Simple_Wooden_Axe = registerItem("simple_wooden_axe",
@@ -31,6 +30,7 @@ public class ModItems {
             new Item(new FabricItemSettings().maxCount(1)));
     public static final Item Chunk_pickaxe = registerItem("chunk_pickaxe",
             new ChunkPickaxeItem(new FabricItemSettings().maxCount(1)));
+
 
     private static void addItemsItemGroup(FabricItemGroupEntries entries) {
     }

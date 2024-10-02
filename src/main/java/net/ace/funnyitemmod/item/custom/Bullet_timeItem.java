@@ -14,8 +14,8 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
 
-public class Time_FreezerItem extends Item {
-    public Time_FreezerItem(Settings settings) {
+public class Bullet_timeItem extends Item {
+    public Bullet_timeItem(Settings settings) {
         super(settings);
     }
     private static boolean startStop = false;
@@ -44,10 +44,10 @@ public class Time_FreezerItem extends Item {
                         e.printStackTrace();
                     }
                     try {
-                        user.sendMessage(Text.translatable("item.funny-item-mod.time_freezer.start"),true);
+                        user.sendMessage(Text.translatable("item.funny-item-mod.bullet_time.start"),true);
                         // 解析指令并获取命令源
                         ParseResults<ServerCommandSource> parseResults
-                                = dispatcher.parse("tick freeze", server.getCommandSource());
+                                = dispatcher.parse("tick rate 5", server.getCommandSource());
                         // 执行指令
                         dispatcher.execute(parseResults);
 
@@ -63,9 +63,9 @@ public class Time_FreezerItem extends Item {
                 CommandDispatcher<ServerCommandSource> dispatcher = server.getCommandManager().getDispatcher();
                 try {
                     // 解析指令并获取命令源
-                        user.sendMessage(Text.translatable(("item.funny-item-mod.time_freezer.stop")), true);
+                        user.sendMessage(Text.translatable(("item.funny-item-mod.bullet_time.stop")), true);
                     ParseResults<ServerCommandSource> parseResults
-                            = dispatcher.parse("tick unfreeze", server.getCommandSource());
+                            = dispatcher.parse("tick rate 20", server.getCommandSource());
                     // 执行指令
                     dispatcher.execute(parseResults);
 

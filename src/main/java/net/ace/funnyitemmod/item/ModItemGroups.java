@@ -15,7 +15,7 @@ public class ModItemGroups {
             new Identifier(funnyitemMod.MOD_ID, "time"),
             FabricItemGroup.builder().displayName(Text.translatable("itemgroup.time"))
                     .icon(() -> new ItemStack(ModBlocks.Rune_anvil)).entries((displayContext, entries) -> {
-                        entries.add(ModItems.Time_freezer);
+                        entries.add(ModItems.Bullet_time);
                         entries.add(ModItems.Get_Block_Staff);
                         entries.add(ModItems.Simple_Wooden_Axe);
                         entries.add(ModItems.Clone);

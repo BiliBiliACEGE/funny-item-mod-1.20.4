@@ -10,11 +10,7 @@ import net.minecraft.entity.ItemEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.Inventory;
 import net.minecraft.inventory.SimpleInventory;
-import net.minecraft.item.ArmorItem;
-import net.minecraft.item.ItemPlacementContext;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
-import net.minecraft.item.SwordItem;
+import net.minecraft.item.*;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.nbt.NbtElement;
 import net.minecraft.nbt.NbtList;
@@ -75,7 +71,7 @@ public class RuneAnvilBlock extends HorizontalFacingBlock implements Inventory {
                         book = upgradeEnchantmentLevel(book);
                         world.spawnEntity(new ItemEntity(world, pos.getX(), pos.getY(), pos.getZ(), book));
                         world.playSound(player, pos, SoundEvents.BLOCK_ANVIL_USE, SoundCategory.BLOCKS, 1.0f, 1.0f);
-                    } else if (item.getItem() instanceof ArmorItem || item.getItem() instanceof SwordItem) {
+                    } else if (item.getItem() instanceof ArmorItem || item.getItem() instanceof SwordItem || item.getItem() instanceof ToolItem || item.getItem() instanceof BowItem || item.getItem() instanceof TridentItem) {
                         ItemStack upgradedItem = item.getItem() instanceof ArmorItem ?
                                 upgradeArmorEnchantmentLevel(item) :
                                 upgradeWeaponEnchantmentLevel(item);
@@ -89,7 +85,7 @@ public class RuneAnvilBlock extends HorizontalFacingBlock implements Inventory {
                     player.setStackInHand(hand, item);
                     world.playSound(player, pos, SoundEvents.BLOCK_ANVIL_FALL, SoundCategory.BLOCKS, 1.0f, 1.0f);
                 }
-            } else if (heldItem.getItem() == Items.ENCHANTED_BOOK || heldItem.getItem() instanceof ArmorItem || heldItem.getItem() instanceof SwordItem) {
+            } else if (heldItem.getItem() == Items.ENCHANTED_BOOK || heldItem.getItem() instanceof ArmorItem || heldItem.getItem() instanceof SwordItem || heldItem.getItem() instanceof ToolItem || heldItem.getItem() instanceof BowItem || heldItem.getItem() instanceof TridentItem) {
                 if (inventory.isEmpty()) {
                     inventory.setStack(0, heldItem.split(1));
                     world.playSound(player, pos, SoundEvents.BLOCK_ANVIL_LAND, SoundCategory.BLOCKS, 1.0f, 1.0f);

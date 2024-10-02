@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "funny-item-mod:item/time_freezer"
+    "layer0": "funny-item-mod:item/bullet_time"
   }
 }
