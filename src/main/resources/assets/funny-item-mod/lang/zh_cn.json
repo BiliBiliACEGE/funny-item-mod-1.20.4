@@ -9,6 +9,7 @@
   "item.funny-item-mod.chunk_pickaxe": "区块镐",
   "item.funny-item-mod.clone": "建筑克隆枪",
   "block.funny-item-mod.rune_anvil": "符文铁砧",
+  "item.funny-item-mod.clone_ball": "克隆球",
   "itemgroup.time": "Ace的有趣物品",
   "item.funny-item-mod.bullet_time.start": "子弹时间！",
   "item.funny-item-mod.bullet_time.stop":"回到正常时间",
@@ -26,5 +27,14 @@
   "command.down": "挖掘方向已设置为向下",
   "command.error": "指令错误，请检查输入的参数是否正确",
   "command.mode.mining": "工具模式已设置为挖掘模式",
-  "command.mode.fill": "工具模式已设置为填充模式"
+  "command.mode.fill": "工具模式已设置为填充模式",
+  "commands.funnyitemmod.setwt.invalid_block_name": "%s 无效的方块名称",
+  "commands.funnyitemmod.setwt.block_not_found": "未找到名称为 %s 的方块",
+  "commands.funnyitemmod.setwt.whitelist_full": "白名单已满",
+  "commands.funnyitemmod.setwt.block_already_whitelisted": "方块 %s 已在白名单中",
+  "commands.funnyitemmod.setwt.block_whitelisted": "方块 %s 已添加至白名单",
+  "commands.funnyitemmod.setwt.whitelist_empty": "白名单为空",
+  "commands.funnyitemmod.setwt.whitelist_header": "白名单: ",
+  "commands.funnyitemmod.undo.success": "撤销成功",
+  "sounds.funny-item-mod.clone_ball_hit": "克隆球掷出"
 }

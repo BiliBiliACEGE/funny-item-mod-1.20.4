@@ -16,7 +16,7 @@
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-          "net.ace.funnyitemMod"
+          "net.ace.FunnyItemMod"
 		],
 		"client": [
 			"net.ace.FunnyitemModClient"

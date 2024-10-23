@@ -1,6 +1,6 @@
 package net.ace.funnyitemmod.item;
 
-import net.ace.funnyitemMod;
+import net.ace.FunnyItemMod;
 import net.ace.funnyitemmod.item.custom.*;
 import net.ace.funnyitemmod.item.custom.AxeItem;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
@@ -30,16 +30,17 @@ public class ModItems {
             new Item(new FabricItemSettings().maxCount(1)));
     public static final Item Chunk_pickaxe = registerItem("chunk_pickaxe",
             new ChunkPickaxeItem(new FabricItemSettings().maxCount(1)));
-
+    public static final Item  Clone_ball = registerItem("clone_ball",
+    new clone_ball_Item(new FabricItemSettings().maxCount(64)));
 
     private static void addItemsItemGroup(FabricItemGroupEntries entries) {
     }
     private static Item registerItem(String name, Item item) {
-        return Registry.register(Registries.ITEM, new Identifier(funnyitemMod.MOD_ID, name), item);
+        return Registry.register(Registries.ITEM, new Identifier(FunnyItemMod.MOD_ID, name), item);
     }
 
     public static void registerModItems() {
-        funnyitemMod.LOGGER.info("模组物品注册 " + funnyitemMod.MOD_ID);
+        FunnyItemMod.LOGGER.info("模组物品注册 " + FunnyItemMod.MOD_ID);
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(ModItems::addItemsItemGroup);
     }

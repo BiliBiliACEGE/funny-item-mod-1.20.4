@@ -1,0 +1,8 @@
+{
+  "clone_ball_hit": {
+    "subtitle": "sounds.funny-item-mod.clone_ball_hit",
+    "sounds": [
+      "funny-item-mod:clone_ball_hit"
+    ]
+  }
+}

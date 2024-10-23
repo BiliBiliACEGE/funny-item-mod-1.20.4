@@ -9,6 +9,7 @@
   "item.funny-item-mod.chunk_pickaxe": "Chunk Pickaxe",
   "item.funny-item-mod.clone": "Construction Cloning Gun",
   "block.funny-item-mod.rune_anvil": "Rune anvil",
+  "item.funny-item-mod.clone_ball": "Clone Ball",
   "itemgroup.time": "Ace's Funny Item",
   "item.funny-item-mod.bullet_time.start": "Bullet time!",
   "item.funny-item-mod.bullet_time.stop":"The time has been normal",
@@ -26,5 +27,14 @@
   "command.down": "The digging direction has been set to down",
   "command.error": "The command is wrong, please check the command",
   "command.mode.mining": "The tool mode is set to mining mode",
-  "command.mode.fill": "The tool mode is set to fill mode"
+  "command.mode.fill": "The tool mode is set to fill mode",
+  "commands.funnyitemmod.setwt.invalid_block_name": "%s Invalid block name",
+  "commands.funnyitemmod.setwt.block_not_found": "Block not found %s",
+  "commands.funnyitemmod.setwt.whitelist_full": "The whitelist is full",
+  "commands.funnyitemmod.setwt.block_already_whitelisted": "The block %s is already whitelisted",
+  "commands.funnyitemmod.setwt.block_whitelisted": "The block %s has been whitelisted",
+  "commands.funnyitemmod.setwt.whitelist_empty": "The whitelist is empty",
+  "commands.funnyitemmod.setwt.whitelist_header": "Whitelisted blocks: ",
+  "commands.funnyitemmod.undo.success": "Undo has Successfully ",
+  "sounds.funny-item-mod.clone_ball_hit": "Clone ball has been shoot"
 }

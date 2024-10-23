@@ -19,8 +19,6 @@ public class ToggleCommand {
     private static final SuggestionProvider<ServerCommandSource> DIRECTION_SUGGESTION_PROVIDER = (context, builder) ->
             CommandSource.suggestMatching(new String[]{"up", "down"}, builder);
 
-    private static final SuggestionProvider<ServerCommandSource> MODE_SUGGESTION_PROVIDER = (context, builder) ->
-            CommandSource.suggestMatching(new String[]{"fill", "Mining"}, builder);
 
     public static void register(CommandDispatcher<ServerCommandSource> dispatcher) {
         // 注册合并后的 toggle 指令
@@ -32,8 +30,6 @@ public class ToggleCommand {
                                     String type = StringArgumentType.getString(context, "type");
                                     if (type.equals("direction")) {
                                         return DIRECTION_SUGGESTION_PROVIDER.getSuggestions(context, builder);
-                                    } else if (type.equals("mode")) {
-                                        return MODE_SUGGESTION_PROVIDER.getSuggestions(context, builder);
                                     }
                                     return builder.buildFuture();
                                 })
@@ -50,9 +46,8 @@ public class ToggleCommand {
 
         if (type.equals("direction")) {
             return toggleDirection(context, value);
-        } else if (type.equals("mode")) {
-            return toggleMode(context, value);
-        } else {
+        }
+         else {
             context.getSource().sendFeedback(() -> Text.translatable("command.error"), false);
             return 0;
         }
@@ -66,21 +61,6 @@ public class ToggleCommand {
         } else if (value.equals("down")) {
             ChunkPickaxeItem.setDirection(false);
             context.getSource().sendFeedback(() -> Text.translatable("command.down"), false);
-        } else {
-            context.getSource().sendFeedback(() -> Text.translatable("command.error"), false);
-            return 0;
-        }
-        return 1;
-    }
-
-    // 切换挖掘模式的逻辑
-    private static int toggleMode(CommandContext<ServerCommandSource> context, String value) {
-        if ("Mining".equals(value)) {
-            ChunkPickaxeItem.setMode("Mining");
-            context.getSource().sendFeedback(() -> Text.translatable("command.mode.mining"), false);
-        } else if ("fill".equals(value)) {
-            ChunkPickaxeItem.setMode("fill");
-            context.getSource().sendFeedback(() -> Text.translatable("command.mode.fill"), false);
         } else {
             context.getSource().sendFeedback(() -> Text.translatable("command.error"), false);
             return 0;
