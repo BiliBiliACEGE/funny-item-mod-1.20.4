@@ -14,7 +14,7 @@ import net.minecraft.util.Identifier;
 
 public class ModBlocks {
     public final static Block Rune_anvil = registerBlock("rune_anvil",
-            new RuneAnvilBlock(FabricBlockSettings.copyOf(Blocks.ANVIL)));
+            new RuneAnvilBlock(FabricBlockSettings.copyOf(Blocks.ANVIL).nonOpaque()));
 
     private  static  Block registerBlock(String name , Block block) {
         registerBlockItem(name,block);
