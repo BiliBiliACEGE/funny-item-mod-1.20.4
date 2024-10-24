@@ -25,6 +25,6 @@ public class ModBlocks {
                 new BlockItem(block,new FabricItemSettings()));
     }
     public static void registerModBlocks() {
-        FunnyItemMod.LOGGER.info("模组方块注册 " + FunnyItemMod.MOD_ID);
+        System.out.println("模组方块注册 " + FunnyItemMod.MOD_ID);
     }
 }

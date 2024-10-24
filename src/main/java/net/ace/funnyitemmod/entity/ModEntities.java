@@ -12,10 +12,9 @@ import net.minecraft.util.Identifier;
 
 public class ModEntities {
     public static final EntityType<Clone_ballEntity> CLONE_PROJECTILE = Registry.register(Registries.ENTITY_TYPE,
-    new Identifier(FunnyItemMod.MOD_ID, "fill_projectile"), FabricEntityTypeBuilder.<Clone_ballEntity>create(SpawnGroup.MISC, Clone_ballEntity::new)
+    new Identifier(FunnyItemMod.MOD_ID, "clone_projectile"), FabricEntityTypeBuilder.<Clone_ballEntity>create(SpawnGroup.MISC, Clone_ballEntity::new)
             .dimensions(EntityDimensions.fixed(0.25f,0.25f)).build());
     public static void registerModEntities() {
-        FunnyItemMod.LOGGER.info("注册模组实体");
-
+        System.out.println("模组实体注册"+FunnyItemMod.MOD_ID);
     }
 }

@@ -40,7 +40,7 @@ public class ModItems {
     }
 
     public static void registerModItems() {
-        FunnyItemMod.LOGGER.info("模组物品注册 " + FunnyItemMod.MOD_ID);
+        System.out.println("模组物品注册"+ FunnyItemMod.MOD_ID);
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(ModItems::addItemsItemGroup);
     }

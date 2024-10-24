@@ -19,7 +19,7 @@ public class ModSounds {
 
 
     public static void registerSounds() {
-        FunnyItemMod.LOGGER.info("注册模组声音"+FunnyItemMod.MOD_ID);
+        System.out.println("模组声音注册"+FunnyItemMod.MOD_ID);
 
     }
 }

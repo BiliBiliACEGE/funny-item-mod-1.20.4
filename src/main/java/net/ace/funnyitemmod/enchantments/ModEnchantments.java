@@ -14,6 +14,6 @@ public class ModEnchantments {
    }
 
     public static void registerModEnchantments() {
-        System.out.println("注册模组附魔"+ FunnyItemMod.MOD_ID);
+        System.out.println("模组附魔注册"+ FunnyItemMod.MOD_ID);
     }
 }

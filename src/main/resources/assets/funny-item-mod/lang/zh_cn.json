@@ -36,5 +36,7 @@
   "commands.funnyitemmod.setwt.whitelist_empty": "白名单为空",
   "commands.funnyitemmod.setwt.whitelist_header": "白名单: ",
   "commands.funnyitemmod.undo.success": "撤销成功",
-  "sounds.funny-item-mod.clone_ball_hit": "克隆球掷出"
+  "sounds.funny-item-mod.clone_ball_hit": "克隆球掷出",
+  "entity.minecraft.villager.rune_smith": "符文商人",
+  "entity.funny-item-mod.clone_projectile": "克隆弹射物实体"
 }

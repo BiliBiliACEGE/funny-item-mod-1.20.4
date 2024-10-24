@@ -38,6 +38,6 @@ public class ModItemGroups {
 
 
     public static void registerItemGroups() {
-        FunnyItemMod.LOGGER.info("模组物品组注册 " + FunnyItemMod.MOD_ID);
+        System.out.println("模组物品组注册"+ FunnyItemMod.MOD_ID);
     }
 }

@@ -50,8 +50,17 @@ public class RuneAnvilBlock extends HorizontalFacingBlock implements Inventory {
     @Nullable
     @Override
     public BlockState getPlacementState(ItemPlacementContext context) {
-        return this.getDefaultState().with(FACING, context.getPlayerLookDirection().getOpposite());
+        Direction direction = context.getPlayerLookDirection().getOpposite();
+
+        // 确保只有允许的方向可以被设置
+        if (direction.getAxis() == Direction.Axis.Y) {
+            // 如果方向是上下，则使用默认的北向
+            return this.getDefaultState().with(FACING, Direction.NORTH);
+        } else {
+            return this.getDefaultState().with(FACING, direction);
+        }
     }
+
 
     @Override
     protected MapCodec<? extends HorizontalFacingBlock> getCodec() {
