@@ -5,7 +5,6 @@ import net.ace.FunnyItemMod;
 import net.ace.funnyitemmod.block.ModBlocks;
 import net.fabricmc.fabric.api.object.builder.v1.world.poi.PointOfInterestHelper;
 import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
@@ -17,7 +16,7 @@ import net.minecraft.world.poi.PointOfInterestType;
 
 public class ModVillagers {
     public static final RegistryKey<PointOfInterestType> RUNE_POI_KEY = poiKey("rune_poi");
-    public static final PointOfInterestType RUNE_POI = registerPoi("rune_poi", ModBlocks.Rune_anvil.getDefaultState().getBlock());
+    public static final PointOfInterestType RUNE_POI = registerPoi("rune_poi", ModBlocks.Rune_anvil);
 
     public static final VillagerProfession RUNE_SMITH = registerProfession("rune_smith", RUNE_POI_KEY);
 
