@@ -38,6 +38,5 @@
   "commands.funnyitemmod.undo.success": "撤销成功",
   "sounds.funny-item-mod.clone_ball_hit": "克隆球掷出",
   "entity.minecraft.villager.rune_smith": "符文商人",
-  "entity.funny-item-mod.clone_projectile": "克隆弹射物实体",
-  "container.rune_anvil": "符文铁砧"
+  "entity.funny-item-mod.clone_projectile": "克隆弹射物实体"
 }

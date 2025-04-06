@@ -30,7 +30,7 @@ public class ModItems {
             new Item(new FabricItemSettings().maxCount(1)));
     public static final Item Chunk_pickaxe = registerItem("chunk_pickaxe",
             new ChunkPickaxeItem(new FabricItemSettings().maxCount(1)));
-    public static final Item Clone_ball = registerItem("clone_ball",
+    public static final Item  Clone_ball = registerItem("clone_ball",
     new clone_ball_Item(new FabricItemSettings().maxCount(64)));
 
     private static void addItemsItemGroup(FabricItemGroupEntries entries) {
