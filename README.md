@@ -1,2 +1,69 @@
-这是Ace哥闲来无事制作的模组，添加了许多有趣的物品  
-This is a mod made by Ace in his spare time, with a lot of interesting items added
+# Ace's Funny Item Mod
+
+![Mod Icon](D:\javapojact\ace's-funny-item-mod-1.20.4\src\main\resources\assets\funny-item-mod\icon.png)
+
+这是一个由Ace在闲暇时间制作的Minecraft模组，添加了许多有趣且实用的物品和功能。该模组适用于Minecraft 1.20.4版本，使用Fabric API进行开发。
+
+## 模组特色
+
+### 新增物品
+- **符文战斧 (Rune Battle Axe)**: 强大的战斗工具，附带特殊效果。
+- **区块镐 (Chunk Pickaxe)**: 可以一次性挖掘整个区块的工具。
+- **建筑克隆枪 (Construction Cloning Gun)**: 快速复制建筑结构的工具。
+- **子弹时间 (Bullet Time)**: 减缓时间流动的物品，让你在战斗中占据优势。
+- **符文锻锤 (Rune Smith Hammer)**: 用于制作高级物品的工具。
+
+### 新增方块
+- **符文铁砧 (Rune Anvil)**: 用于制作和升级物品的高级铁砧。
+
+### 新增村民职业
+- **符文铁匠 (Rune Smith)**: 提供独特的交易选项，包括符文锻锤和其他高级物品。
+
+## 安装指南
+
+1. 确保你已经安装了Fabric Loader和Fabric API。
+2. 下载最新版本的模组文件。
+3. 将模组文件放入Minecraft的`mods`文件夹中。
+4. 启动游戏并享受新内容！
+
+## 使用方法
+
+### 符文战斧
+- 右键点击敌人可以触发特殊效果，如击退和伤害加成。
+
+### 区块镐
+- 右键点击方块可以选择区块范围，左键点击可以一次性挖掘整个区块。
+
+### 建筑克隆枪
+- 右键点击两个点以选择复制区域，再次右键点击以粘贴建筑结构。
+
+### 子弹时间
+- 右键点击使用，减缓时间流动，再次点击恢复正常时间。
+
+### 符文锻锤
+- 用于在符文铁砧上制作和升级物品。
+
+### 符文铁砧
+- 放置在地面上，右键点击打开制作界面。
+
+## 开发者信息
+
+- **开发者**: Ace
+- **GitHub**: [BiliBiliACEGE]([(https://github.com/BiliBiliACEGE)])
+- **Modrinth**: [ACEGE_](https://modrinth.com/user/ACEGE_)
+
+## 许可证
+
+本项目采用 [CC0-1.0](LICENSE) 许可证，你可以自由使用、修改和分发本模组。
+
+## 反馈与支持
+
+如果你在使用过程中遇到任何问题，或者有任何建议，欢迎在GitHub上提交Issue，或者通过Modrinth联系我。
+
+## 致谢
+
+感谢所有支持和使用本模组的玩家！希望你们在游戏中玩得开心！
+
+---
+
+**注意**: 本模组仍在开发中，可能会有一些未完善的功能和Bug。我们会持续更新和优化，敬请期待！
