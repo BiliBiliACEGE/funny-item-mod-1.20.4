@@ -1,6 +1,7 @@
 # Ace's Funny Item Mod
 
-![Mod Icon](D:\javapojact\ace's-funny-item-mod-1.20.4\src\main\resources\assets\funny-item-mod\icon.png)
+![icon](https://github.com/user-attachments/assets/ca3b6291-d364-41c6-98fb-e27d001ec363)
+
 
 这是一个由Ace在闲暇时间制作的Minecraft模组，添加了许多有趣且实用的物品和功能。该模组适用于Minecraft 1.20.4版本，使用Fabric API进行开发。
 
