@@ -12,6 +12,7 @@ import net.ace.funnyitemmod.util.ModCustomTrades;
 import net.ace.funnyitemmod.villager.ModVillagers;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
+import net.minecraft.component.type.BlockStateComponent;
 
 
 public class FunnyItemMod implements ModInitializer {

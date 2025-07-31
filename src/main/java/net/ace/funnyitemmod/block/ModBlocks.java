@@ -20,9 +20,9 @@ public class ModBlocks {
         registerBlockItem(name,block);
         return  Registry.register(Registries.BLOCK,Identifier.of(FunnyItemMod.MOD_ID,name),block);
     }
-    private  static Item registerBlockItem(String name , Block block) {
-        return Registry.register(Registries.ITEM,Identifier.of(FunnyItemMod.MOD_ID,name),
-                new BlockItem(block,new Item.Settings().registryKey(RegistryKey.of(RegistryKeys.ITEM,Identifier.of(FunnyItemMod.MOD_ID,name)))));
+    private  static void registerBlockItem(String name , Block block) {
+        Registry.register(Registries.ITEM, Identifier.of(FunnyItemMod.MOD_ID, name),
+                new BlockItem(block, new Item.Settings().registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(FunnyItemMod.MOD_ID, name)))));
     }
     public static void registerModBlocks() {
         System.out.println("模组方块注册 " + FunnyItemMod.MOD_ID);

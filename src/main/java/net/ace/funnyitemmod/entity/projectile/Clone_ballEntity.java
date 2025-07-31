@@ -22,6 +22,7 @@ public class Clone_ballEntity extends ThrownItemEntity {
         super(entityType, world);
     }
 
+
     @Override
     protected Item getDefaultItem() {
         return ModItems.Clone_ball;
@@ -46,7 +47,6 @@ public class Clone_ballEntity extends ThrownItemEntity {
             );
 
             if (cloneEntity != null) {
-                // 复制名称和名字显示状态
                 if (targetEntity.hasCustomName()) {
                     cloneEntity.setCustomName(targetEntity.getCustomName());
                     cloneEntity.setCustomNameVisible(targetEntity.isCustomNameVisible());
@@ -57,12 +57,10 @@ public class Clone_ballEntity extends ThrownItemEntity {
                 cloneEntity.setHealth(Math.min(targetEntity.getHealth(), cloneEntity.getMaxHealth()));
                 cloneEntity.setSneaking(targetEntity.isSneaking());
 
-                // 复制装备
                 for (EquipmentSlot slot : EquipmentSlot.values()) {
                     cloneEntity.equipStack(slot, targetEntity.getEquippedStack(slot).copy());
                 }
 
-                // 设置位置和旋转
                 cloneEntity.refreshPositionAndAngles(
                         targetEntity.getX(),
                         targetEntity.getY(),
@@ -71,11 +69,9 @@ public class Clone_ballEntity extends ThrownItemEntity {
                         targetEntity.getPitch()
                 );
 
-                // 生成实体
                 serverWorld.spawnEntity(cloneEntity);
                 System.out.println("克隆实体已生成");
 
-                // 给拥有者发送成功消息
                 if (this.getOwner() instanceof ServerPlayerEntity owner) {
                     owner.sendMessage(Text.of("克隆成功!"), false);
                 }
