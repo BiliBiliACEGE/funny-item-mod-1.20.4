@@ -7,10 +7,5 @@
   ],
   "injectors": {
     "defaultRequire": 1
-  },
-  "client": [
-    "ItemRendererAccessor",
-    "ItemRendererMixin",
-    "ModelLoaderMixin"
-  ]
+  }
 }

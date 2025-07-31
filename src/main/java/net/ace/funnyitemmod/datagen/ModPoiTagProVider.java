@@ -1,8 +1,8 @@
 package net.ace.funnyitemmod.datagen;
 
-import net.ace.FunnyItemMod;
+import net.ace.funnyitemmod.FunnyItemMod;
 import net.minecraft.data.DataOutput;
-import net.minecraft.data.server.tag.TagProvider;
+import net.minecraft.data.tag.TagProvider;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.tag.PointOfInterestTypeTags;
@@ -18,7 +18,7 @@ public class ModPoiTagProVider extends TagProvider<PointOfInterestType> {
 
     @Override
     protected void configure(RegistryWrapper.WrapperLookup lookup) {
-         this.getOrCreateTagBuilder(PointOfInterestTypeTags.ACQUIRABLE_JOB_SITE)
-                 .addOptional(new Identifier(FunnyItemMod.MOD_ID, "rune_poi"));
+         this.getTagBuilder(PointOfInterestTypeTags.ACQUIRABLE_JOB_SITE)
+                 .addOptional(Identifier.of(FunnyItemMod.MOD_ID, "rune_poi"));
     }
 }

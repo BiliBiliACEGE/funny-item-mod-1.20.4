@@ -1,5 +1,6 @@
 package net.ace.funnyitemmod.item.custom;
 
+import net.fabricmc.fabric.api.item.v1.FabricItem;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.BlockState;
@@ -7,19 +8,18 @@ import net.minecraft.entity.ItemEntity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
-import net.minecraft.item.PickaxeItem;
-import net.minecraft.item.ToolMaterials;
+import net.minecraft.item.ToolMaterial;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Box;
 import net.minecraft.world.World;
-import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 
 import java.util.*;
 
-public class ChunkPickaxeItem extends PickaxeItem {
+    public class ChunkPickaxeItem extends Item {
     private static final Set<ItemStack> MINERAL_ITEMS = new HashSet<>();
     private static boolean diggingUp = false; // 挖掘方向，默认为向下
     private static final String currentMode = "Mining"; // 默认模式为挖掘模式
@@ -36,8 +36,8 @@ public class ChunkPickaxeItem extends PickaxeItem {
         MINERAL_ITEMS.add(new ItemStack(Items.NETHERITE_SCRAP));
     }
 
-    public ChunkPickaxeItem(FabricItemSettings settings) {
-        super(ToolMaterials.NETHERITE, 1, -2.8F, settings);
+    public ChunkPickaxeItem(Settings settings) {
+        super(settings);
     }
 
     // 用于设置挖掘方向
@@ -58,7 +58,6 @@ public class ChunkPickaxeItem extends PickaxeItem {
         previousBlockStates.clear();
     }
 
-    @Override
     public boolean postMine(ItemStack stack, World world, BlockState state, BlockPos pos, LivingEntity miner) {
         // 挖掘逻辑
         return executeMiningMode(stack, world, state, pos, miner);
@@ -72,7 +71,7 @@ public class ChunkPickaxeItem extends PickaxeItem {
             // 添加缓降效果
             miner.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOW_FALLING, 20 * 30, 0));
             // 逐层破坏整个区块直到达到顶部或基岩层
-            for (int y = startY; diggingUp ? y <= world.getTopY() : y >= world.getBottomY(); y = diggingUp ? y + 1 : y - 1) {
+            for (int y = startY; diggingUp ? y <= world.getTopYInclusive() : y >= world.getBottomY(); y = diggingUp ? y + 1 : y - 1) {
                 for (int x = startX; x < startX + 16; x++) {
                     for (int z = startZ; z < startZ + 16; z++) {
                         BlockPos currentPos = new BlockPos(x, y, z);
@@ -97,7 +96,7 @@ public class ChunkPickaxeItem extends PickaxeItem {
                 }
             }
         }
-        return super.postMine(stack, world, state, pos, miner);
+        return true;
     }
 
     // 清除掉落物

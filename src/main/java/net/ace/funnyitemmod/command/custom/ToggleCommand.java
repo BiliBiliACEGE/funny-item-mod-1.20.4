@@ -12,7 +12,7 @@ import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.text.Text;
 
 public class ToggleCommand {
-    // 提供自动补全的提示
+    // 提供提示
     private static final SuggestionProvider<ServerCommandSource> TOGGLE_SUGGESTION_PROVIDER = (context, builder) ->
             CommandSource.suggestMatching(new String[]{"direction", "mode"}, builder);
 

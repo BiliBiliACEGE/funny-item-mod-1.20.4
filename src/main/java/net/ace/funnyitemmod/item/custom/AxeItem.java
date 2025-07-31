@@ -5,14 +5,13 @@ import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.ToolMaterials;
+import net.minecraft.item.ToolMaterial;
 import net.minecraft.world.World;
 
 public class AxeItem extends net.minecraft.item.AxeItem {
     public AxeItem(Settings settings) {
-        super(ToolMaterials.NETHERITE, 11, -2.8F,settings);
+        super(ToolMaterial.NETHERITE, 11, -2.8F,settings);
     }
-    @Override
     public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
         if (!world.isClient && entity instanceof PlayerEntity) {
             PlayerEntity player = (PlayerEntity) entity;
