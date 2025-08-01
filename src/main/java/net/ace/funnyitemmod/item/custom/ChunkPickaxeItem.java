@@ -1,6 +1,5 @@
 package net.ace.funnyitemmod.item.custom;
 
-import net.fabricmc.fabric.api.item.v1.FabricItem;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.BlockState;
@@ -37,7 +36,7 @@ import java.util.*;
     }
 
     public ChunkPickaxeItem(Settings settings) {
-        super(settings);
+        super(settings.pickaxe(ToolMaterial.NETHERITE, 1,1));
     }
 
     // 用于设置挖掘方向

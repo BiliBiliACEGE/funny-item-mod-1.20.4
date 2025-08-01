@@ -23,7 +23,7 @@ public class ModVillagers {
 
     private static VillagerProfession registerProfession(String name){
         return Registry.register(Registries.VILLAGER_PROFESSION,Identifier.of(FunnyItemMod.MOD_ID,name),
-                new VillagerProfession(Text.of(name), entry -> entry.matchesKey(ModVillagers.RUNE_POI_KEY), entry -> entry.matchesKey(ModVillagers.RUNE_POI_KEY),
+                new VillagerProfession(Text.translatable("entity.minecraft.villager." + name), entry -> entry.matchesKey(ModVillagers.RUNE_POI_KEY), entry -> entry.matchesKey(ModVillagers.RUNE_POI_KEY),
                         ImmutableSet.of(),ImmutableSet.of(),SoundEvents.ENTITY_VILLAGER_WORK_TOOLSMITH));
     }
 
