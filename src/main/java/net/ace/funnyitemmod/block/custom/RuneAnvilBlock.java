@@ -83,9 +83,10 @@ public class RuneAnvilBlock extends HorizontalFacingBlock implements Inventory {
                     upgradedItem = upgradeEnchantmentsOnStack(itemToUpgrade, DataComponentTypes.STORED_ENCHANTMENTS);
                     inventory.removeStack(0);
                     world.spawnEntity(new ItemEntity(world, pos.getX() + 0.5, pos.getY() + 1.0, pos.getZ() + 0.5, upgradedItem));
-                } else if (itemToUpgrade.isEnchantable()) {
+                } else if (itemToUpgrade.isEnchantable() || itemToUpgrade.hasEnchantments()) {
                     upgradedItem = upgradeEnchantmentsOnStack(itemToUpgrade, DataComponentTypes.ENCHANTMENTS);
-                    inventory.setStack(0, upgradedItem);
+                    inventory.removeStack(0);
+                    world.spawnEntity(new ItemEntity(world, pos.getX() + 0.5, pos.getY() + 1.0, pos.getZ() + 0.5, upgradedItem));
                 }
 
                 if (upgradedItem != null && !upgradedItem.equals(itemToUpgrade)) {
@@ -103,7 +104,7 @@ public class RuneAnvilBlock extends HorizontalFacingBlock implements Inventory {
             }
         }
         // 放置物品
-        else if (heldItem.isOf(Items.ENCHANTED_BOOK) || heldItem.isEnchantable()) {
+        else if (heldItem.isOf(Items.ENCHANTED_BOOK) || heldItem.isEnchantable() || heldItem.hasEnchantments()) {
             if (inventory.isEmpty()) {
                 inventory.setStack(0, heldItem.split(1));
                 world.playSound(null, pos, SoundEvents.BLOCK_ANVIL_LAND, SoundCategory.BLOCKS, 0.5f, 1.0f);
@@ -122,9 +123,10 @@ public class RuneAnvilBlock extends HorizontalFacingBlock implements Inventory {
         ItemEnchantmentsComponent.Builder builder = new ItemEnchantmentsComponent.Builder(ItemEnchantmentsComponent.DEFAULT);
         for (RegistryEntry<Enchantment> enchantmentEntry : currentEnchantments.getEnchantments()) {
             int currentLevel = currentEnchantments.getLevel(enchantmentEntry);
-            builder.add(enchantmentEntry, currentLevel + 1);
+            // 添加附魔等级上限检查（不超过255级）
+            builder.add(enchantmentEntry, Math.min(currentLevel + 1, 255));
         }
-        ItemStack result = stack.copy();
+        ItemStack result = stack.copyWithCount(1);
         result.set(componentType, builder.build());
         return result;
     }
