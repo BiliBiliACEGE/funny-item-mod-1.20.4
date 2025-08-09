@@ -1,6 +1,5 @@
 package net.ace.funnyitemmod.entity.projectile;
 
-import net.ace.funnyitemmod.entity.ModEntities;
 import net.ace.funnyitemmod.item.ModItems;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;

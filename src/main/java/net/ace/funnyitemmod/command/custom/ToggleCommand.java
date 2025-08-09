@@ -4,14 +4,14 @@ import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.arguments.StringArgumentType;
 import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.suggestion.SuggestionProvider;
-import com.mojang.brigadier.suggestion.SuggestionsBuilder;
+import net.ace.funnyitemmod.command.CommandTemplate;
 import net.ace.funnyitemmod.item.custom.ChunkPickaxeItem;
 import net.minecraft.command.CommandSource;
 import net.minecraft.server.command.CommandManager;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.text.Text;
 
-public class ToggleCommand {
+public class ToggleCommand implements CommandTemplate {
     // 提供提示
     private static final SuggestionProvider<ServerCommandSource> TOGGLE_SUGGESTION_PROVIDER = (context, builder) ->
             CommandSource.suggestMatching(new String[]{"direction", "mode"}, builder);
@@ -20,7 +20,7 @@ public class ToggleCommand {
             CommandSource.suggestMatching(new String[]{"up", "down"}, builder);
 
 
-    public static void register(CommandDispatcher<ServerCommandSource> dispatcher) {
+    public void register(CommandDispatcher<ServerCommandSource> dispatcher) {
         // 注册合并后的 toggle 指令
         dispatcher.register(CommandManager.literal("toggle")
                 .then(CommandManager.argument("type", StringArgumentType.word())

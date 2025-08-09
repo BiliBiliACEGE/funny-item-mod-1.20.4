@@ -1,10 +1,19 @@
 package net.ace.funnyitemmod;
 
 import net.ace.funnyitemmod.entity.ModEntities;
+import net.ace.funnyitemmod.item.ModItems;
 import net.ace.funnyitemmod.renderer.CloneBallEntityRenderer;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
-import net.minecraft.client.render.entity.FlyingItemEntityRenderer;
+import net.minecraft.block.Blocks;
+import net.minecraft.client.world.ClientWorld;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.BlockItem;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.Identifier;
+import org.jetbrains.annotations.Nullable;
 
 public class FunnyitemModClient implements ClientModInitializer {
     @Override
