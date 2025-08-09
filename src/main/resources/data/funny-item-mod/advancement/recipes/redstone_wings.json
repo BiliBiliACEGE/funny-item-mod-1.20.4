@@ -1,0 +1,36 @@
+{
+  "display": {
+    "icon": {
+      "id": "funny-item-mod:feather_of_soaring"
+    },
+    "title": {
+      "translate": "advancement.funny-item-mod.redstone_wings.title"
+    },
+    "description": {
+      "translate": "advancement.funny-item-mod.redstone_wings.description"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false,
+    "background": "minecraft:textures/block/redstone_block.png"
+  },
+  "parent": "minecraft:end/elytra",
+  "criteria": {
+    "crafted_feather": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "funny-item-mod:feather_of_soaring"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "experience": 50
+  }
+}

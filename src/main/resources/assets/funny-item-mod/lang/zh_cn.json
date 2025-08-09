@@ -13,6 +13,8 @@
   "item.funny_item_mod.feather_of_soaring.disabled": "翱翔模式已禁用",
   "item.funny_item_mod.feather_of_soaring.tooltip": "右键切换飞行能力",
   "item.funny_item_mod.feather_of_soaring.tooltip2": "生存模式可用",
+  "advancement.funny-item-mod.redstone_wings.title": "红石之翼",
+  "advancement.funny-item-mod.redstone_wings.description": "将古老飞行术与红石科技相融合",
   "item.funny-item-mod.rune_anvil": "符文铁砧",
   "item.funny-item-mod.clone_ball": "克隆球",
   "itemgroup.time": "Ace的有趣物品",

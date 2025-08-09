@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "#": {
-      "item": "minecraft:redstone"
-    },
-    "X": {
-      "item": "minecraft:clock"
-    }
+    "#":  "minecraft:redstone",
+    "X": "minecraft:clock"
   },
   "pattern": [
     " # ",
@@ -15,7 +11,8 @@
     " # "
   ],
   "result": {
-    "item": "funny-item-mod:bullet_time"
+    "id": "funny-item-mod:bullet_time",
+    "count": 1
   },
   "show_notification": true
 }

@@ -13,6 +13,8 @@
   "item.funny_item_mod.feather_of_soaring.disabled": "Feather of Soaring Disabled",
   "item.funny_item_mod.feather_of_soaring.tooltip": "Right-click to switch flight ability",
   "item.funny_item_mod.feather_of_soaring.tooltip2": "Survival mode available",
+  "advancement.funny-item-mod.redstone_wings.title": "Wings of Redstone",
+  "advancement.funny-item-mod.redstone_wings.description": "Fuse ancient flight with redstone technology",
   "item.funny-item-mod.rune_anvil": "Rune anvil",
   "item.funny-item-mod.clone_ball": "Clone Ball",
   "itemgroup.time": "Ace's Funny Item",

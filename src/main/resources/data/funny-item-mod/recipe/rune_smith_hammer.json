@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": "funny-item-mod:rune_smith_hammer_head",
+    "X": "funny-item-mod:rune_smith_hammer_handle"
+  },
+  "pattern": [
+    "   ",
+    " X#",
+    "   "
+  ],
+  "result": {
+    "id": "funny-item-mod:rune_smith_hammer",
+    "count": 1
+  },
+  "show_notification": true
+}
