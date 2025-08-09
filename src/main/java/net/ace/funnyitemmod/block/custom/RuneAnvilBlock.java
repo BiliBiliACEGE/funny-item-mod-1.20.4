@@ -74,7 +74,7 @@ public class RuneAnvilBlock extends HorizontalFacingBlock implements Inventory {
         ItemStack heldItem = player.getStackInHand(hand);
 
         // 使用锤子
-        if (heldItem.isOf(ModItems.Hammer)) {
+        if (heldItem.isOf(ModItems.Rune_Smith_Hammer)) {
             if (!inventory.isEmpty()) {
                 ItemStack itemToUpgrade = inventory.getStack(0);
                 ItemStack upgradedItem = null;

@@ -8,8 +8,8 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.world.World;
 
-public class AxeItem extends net.minecraft.item.AxeItem {
-    public AxeItem(Settings settings) {
+public class Rune_battleAxeItem extends net.minecraft.item.AxeItem {
+    public Rune_battleAxeItem(Settings settings) {
         super(ToolMaterial.NETHERITE, 11, -2.8F,settings);
     }
     public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {

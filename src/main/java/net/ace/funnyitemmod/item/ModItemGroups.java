@@ -29,14 +29,15 @@ public class ModItemGroups {
             entries.add(net.ace.funnyitemmod.item.ModItems.Bullet_time);
             entries.add(net.ace.funnyitemmod.item.ModItems.Get_Block_Staff);
             entries.add(net.ace.funnyitemmod.item.ModItems.Simple_Wooden_Axe);
-            entries.add(net.ace.funnyitemmod.item.ModItems.Axe);
-            entries.add(net.ace.funnyitemmod.item.ModItems.Clone);
-            entries.add(net.ace.funnyitemmod.item.ModItems.Hammer);
-            entries.add(net.ace.funnyitemmod.item.ModItems.Hammer_head);
-            entries.add(net.ace.funnyitemmod.item.ModItems.Hammer_handle);
+            entries.add(net.ace.funnyitemmod.item.ModItems.Rune_battleAxe);
+            entries.add(net.ace.funnyitemmod.item.ModItems.Structure_Replicator);
+            entries.add(net.ace.funnyitemmod.item.ModItems.Rune_Smith_Hammer);
+            entries.add(net.ace.funnyitemmod.item.ModItems.Rune_Smith_Hammer_head);
+            entries.add(net.ace.funnyitemmod.item.ModItems.Rune_Smith_Hammer_handle);
             entries.add(net.ace.funnyitemmod.block.ModBlocks.Rune_anvil);
             entries.add(net.ace.funnyitemmod.item.ModItems.Chunk_pickaxe);
             entries.add(net.ace.funnyitemmod.item.ModItems.Clone_ball);
+            entries.add(net.ace.funnyitemmod.item.ModItems.Feather_ofSoaring);
         });
     }
 }

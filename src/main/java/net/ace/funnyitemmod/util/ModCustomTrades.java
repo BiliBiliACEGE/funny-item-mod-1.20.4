@@ -22,7 +22,7 @@ public class ModCustomTrades {
         TradeOfferHelper.registerVillagerOffers(runeSmithKey,1,
                 factories -> factories.add(((entity, random) -> new TradeOffer(
                         new TradedItem(Items.DIAMOND, 10),
-                        new ItemStack(ModItems.Hammer,1),
+                        new ItemStack(ModItems.Rune_Smith_Hammer,1),
                         1,12,0.075f
                 ))));
         TradeOfferHelper.registerVillagerOffers(runeSmithKey,1,

@@ -14,8 +14,8 @@ import net.minecraft.world.World;
 
 import static net.minecraft.block.AnvilBlock.FACING;
 
-public class HammerItem extends Item {
-    public HammerItem(Settings settings) {
+public class Rune_Smith_HammerItem extends Item {
+    public Rune_Smith_HammerItem(Settings settings) {
         super(settings);
     }
 

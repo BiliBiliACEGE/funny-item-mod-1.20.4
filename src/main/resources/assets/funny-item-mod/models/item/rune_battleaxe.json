@@ -1,8 +1,8 @@
 {
 	"credit": "Made with Blockbench",
 	"textures": {
-		"0": "funny-item-mod:item/axe",
-		"particle": "funny-item-mod:item/axe"
+		"0": "funny-item-mod:item/rune_battleaxe",
+		"particle": "funny-item-mod:item/rune_battleaxe"
 	},
 	"elements": [
 		{

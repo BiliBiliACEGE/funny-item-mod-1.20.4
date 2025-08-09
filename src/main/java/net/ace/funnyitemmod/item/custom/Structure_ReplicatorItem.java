@@ -16,12 +16,12 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.RaycastContext;
 import net.minecraft.world.World;
 
-public class CloneItem extends Item {
+public class Structure_ReplicatorItem extends Item {
     private BlockPos selectedBlockPos1 = null;
     private BlockPos selectedBlockPos2 = null;
     private BlockPos selectedBlockPos3 = null;
 
-    public CloneItem(Settings settings) {
+    public Structure_ReplicatorItem(Settings settings) {
         super(settings);
     }
 
