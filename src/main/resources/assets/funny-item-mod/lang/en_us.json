@@ -45,5 +45,9 @@
   "commands.funnyitemmod.undo.success": "Undo has Successfully ",
   "sounds.funny-item-mod.clone_ball_hit": "Clone ball has been shoot",
   "entity.minecraft.villager.rune_smith": "Rune Smith",
-  "entity.funny-item-mod.clone_projectile": "Clone Projectile"
+  "entity.funny-item-mod.clone_projectile": "Clone Projectile",
+  "key.funnyitemmod.hammer_up": "Upgrade Times +1",
+  "key.funnyitemmod.hammer_down": "Upgrade Times -1",
+  "category.funnyitemmod": "Ace's Funny Item",
+  "gui.funnyitemmod.hammer_times": "⚒ Upgrade Times: %d"
 }

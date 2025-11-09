@@ -2,6 +2,7 @@ package net.ace.funnyitemmod.block.custom;
 
 import com.mojang.serialization.MapCodec;
 import net.ace.funnyitemmod.item.ModItems;
+import net.ace.funnyitemmod.util.HammerModeManager;
 import net.minecraft.block.*;
 import net.minecraft.component.ComponentType;
 import net.minecraft.component.DataComponentTypes;
@@ -15,10 +16,13 @@ import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.registry.entry.RegistryEntry;
+import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.state.StateManager;
+import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
+import net.minecraft.util.Formatting;
 import net.minecraft.util.Hand;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
@@ -66,48 +70,62 @@ public class RuneAnvilBlock extends HorizontalFacingBlock implements Inventory {
 
     @Override
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, BlockHitResult hit) {
-        if (world.isClient) {
-            return ActionResult.SUCCESS;
-        }
+        if (world.isClient) return ActionResult.SUCCESS;
 
         Hand hand = player.getActiveHand();
-        ItemStack heldItem = player.getStackInHand(hand);
 
-        // 使用锤子
-        if (heldItem.isOf(ModItems.Rune_Smith_Hammer)) {
-            if (!inventory.isEmpty()) {
-                ItemStack itemToUpgrade = inventory.getStack(0);
-                ItemStack upgradedItem = null;
+        ItemStack held = player.getStackInHand(hand);
 
-                if (itemToUpgrade.isOf(Items.ENCHANTED_BOOK)) {
-                    upgradedItem = upgradeEnchantmentsOnStack(itemToUpgrade, DataComponentTypes.STORED_ENCHANTMENTS);
-                    inventory.removeStack(0);
-                    world.spawnEntity(new ItemEntity(world, pos.getX() + 0.5, pos.getY() + 1.0, pos.getZ() + 0.5, upgradedItem));
-                } else if (itemToUpgrade.isEnchantable() || itemToUpgrade.hasEnchantments()) {
-                    upgradedItem = upgradeEnchantmentsOnStack(itemToUpgrade, DataComponentTypes.ENCHANTMENTS);
-                    inventory.removeStack(0);
-                    world.spawnEntity(new ItemEntity(world, pos.getX() + 0.5, pos.getY() + 1.0, pos.getZ() + 0.5, upgradedItem));
-                }
+        /* ===== 锤子升级逻辑 ===== */
+        if (held.isOf(ModItems.Rune_Smith_Hammer)) {
+            if (inventory.isEmpty()) return ActionResult.PASS;
 
-                if (upgradedItem != null && !upgradedItem.equals(itemToUpgrade)) {
-                    world.playSound(null, pos, SoundEvents.BLOCK_ANVIL_USE, SoundCategory.BLOCKS, 1.0f, 1.0f);
-                    return ActionResult.CONSUME;
-                }
+            ItemStack item = inventory.getStack(0);
+            ItemStack out = item.copy();
+
+            ComponentType<ItemEnchantmentsComponent> comp =
+                    out.isOf(Items.ENCHANTED_BOOK)
+                            ? DataComponentTypes.STORED_ENCHANTMENTS
+                            : DataComponentTypes.ENCHANTMENTS;
+
+            int times = HammerModeManager.get((ServerPlayerEntity) player);
+            int actual = 0;
+            for (int i = 0; i < times; i++) {
+                ItemStack tmp = upgradeEnchantmentsOnStack(out, comp);
+                if (ItemStack.areEqual(tmp, out)) break; // 升不动就停
+                out = tmp;
+                actual++;
             }
-        }
-        // 空手取物
-        else if (heldItem.isEmpty()) {
-            if (!inventory.isEmpty()) {
-                player.getInventory().offerOrDrop(inventory.removeStack(0));
-                world.playSound(null, pos, SoundEvents.ENTITY_ITEM_PICKUP, SoundCategory.BLOCKS, 0.5f, 1.0f);
+
+            if (!ItemStack.areEqual(out, item)) {
+                inventory.removeStack(0);
+                world.spawnEntity(new ItemEntity(world,
+                        pos.getX() + 0.5, pos.getY() + 1.0, pos.getZ() + 0.5, out));
+                world.playSound(null, pos, SoundEvents.BLOCK_ANVIL_USE,
+                        SoundCategory.BLOCKS, 1.0f, 1.0f);
+
+                // 提示实际升级次数
+                player.sendMessage(
+                        Text.literal("实际升级了 " + actual + " 次")
+                                .formatted(Formatting.GREEN), true);
                 return ActionResult.CONSUME;
             }
+            return ActionResult.PASS;
         }
-        // 放置物品
-        else if (heldItem.isOf(Items.ENCHANTED_BOOK) || heldItem.isEnchantable() || heldItem.hasEnchantments()) {
+
+        /* ===== 空手取物 / 放置物品 ===== */
+        if (held.isEmpty()) {
+            if (!inventory.isEmpty()) {
+                player.getInventory().offerOrDrop(inventory.removeStack(0));
+                world.playSound(null, pos, SoundEvents.ENTITY_ITEM_PICKUP,
+                        SoundCategory.BLOCKS, 0.5f, 1.0f);
+                return ActionResult.CONSUME;
+            }
+        } else if (held.isOf(Items.ENCHANTED_BOOK) || held.isEnchantable() || held.hasEnchantments()) {
             if (inventory.isEmpty()) {
-                inventory.setStack(0, heldItem.split(1));
-                world.playSound(null, pos, SoundEvents.BLOCK_ANVIL_LAND, SoundCategory.BLOCKS, 0.5f, 1.0f);
+                inventory.setStack(0, held.split(1));
+                world.playSound(null, pos, SoundEvents.BLOCK_ANVIL_LAND,
+                        SoundCategory.BLOCKS, 0.5f, 1.0f);
                 return ActionResult.CONSUME;
             }
         }
